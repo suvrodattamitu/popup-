@@ -3,7 +3,7 @@
         <el-row>
             <el-col :span="24">
                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">SIZE (in px )</label>
+                    <label class="ninja_popup_label">SIZE, (in px)</label>
                     <el-slider v-model="configs.margin" :min="1" :max="100"></el-slider>
                 </div>
             </el-col>

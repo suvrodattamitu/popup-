@@ -53,6 +53,10 @@ class FrontendApp
         //     return $popupHtml;
         // }
 
+        // $inline = View::make('Frontend.Css.popup', [
+        //     'popup_meta' => $popupConfigs,
+        // ]);
+
         $bannerIndex = array_search('banner', array_column($components, 'key'));
         $componentWrapperClass = ($bannerIndex !== false && ($components[$bannerIndex]['position'] === 'top' || $components[$bannerIndex]['position'] === 'bottom')) ? 'ninja-popup-components-wrapper-column' : '';
         ob_start();
@@ -60,7 +64,7 @@ class FrontendApp
         <div class="nfd-container">
             <div class="nfd-row <?php echo esc_html($popupConfigs['layout_type']); ?>">
                 <div class="ninja-popup-modal frontend-popup-modal"  id="ninja-popup-modal-light">
-                    <div class="ninja-popup-modal-content" style="background-image:url(<?php echo esc_url($popupConfigs['layout']['background_image_url']); ?>)">
+                    <div class="ninja-popup-modal-content ninja-popup-content-styler">
                     <div class="ninja-popup-component-container">
                         <div class="ninja-popup-close-button-container">
                             <div class="ninja-countdown-timer-bar-close" id="close_ninja_popup"></div>
@@ -110,6 +114,9 @@ class FrontendApp
     public function generateCSS($popupConfigs)
     {
         $generatedCss = '';
+
+        // var_dump($generatedCss);
+        // die();
         // if ($generatedCss = get_post_meta($this->popupId, '_ninja_popup_css', true)) {
         //     return $generatedCss;
         // }
@@ -122,6 +129,10 @@ class FrontendApp
                 'prefix'   => 'ninja-popup-components-container'
             ]);
         }
+
+        $generatedCss .= View::make('Frontend.Css.popup', [
+            'popup_meta' => $popupConfigs,
+        ]);
 
         $compressed = str_replace('; ', ';', str_replace(' }', '}', str_replace('{ ', '{',
             str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), "",

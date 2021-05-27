@@ -188,6 +188,10 @@ export default {
                 background-position: center;
             }`;
 
+            css += `.ninja-popup-modal .ninja-popup-content-styler{
+               background-color: ${popup_meta.layout.background_color}; 
+            }`;
+
             popup_meta.popup_components.forEach(element => {
                 //title
                 if( element.key === 'title' ) {

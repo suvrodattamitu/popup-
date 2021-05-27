@@ -25,7 +25,7 @@
         <el-row>
             <el-col :span="24">
                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">FONT SIZE (in px)</label>
+                    <label class="ninja_popup_label">FONT SIZE, (in px)</label>
                     <el-slider v-model="configs.text_size" :min="10" :max="100"></el-slider>
                 </div>
             </el-col>

@@ -1,26 +1,42 @@
 <template>
-    <div class="fluentcrm_photo_card" v-if="app_ready">
-        <div class="fluentcrm_photo_holder">
-            <img v-if="modelValue" :src="modelValue"/>
-        </div>
-        <div :class="[modelValue ? 'ninja_button_container' : '']" >
-            <el-button size="small" @click="initUploader" :type="btn_type">{{btn_text}}</el-button>
+    <div class="ninja-upload-photo-element" v-if="app_ready">
+        <div class="ninja-upload-container">
+            <div class="upload-items">
+                <div class="ninja_popup_photo_holder_element" :class="[modelValue ? 'ninja_upload_photo_container' : '']">
+                    <img v-if="modelValue" :src="modelValue"/>
+                </div>
+                <i class="el-icon-upload ninja-upload-icon"></i>
+                <p>Browse for a file to upload</p>
+                <el-button size="small" @click="initUploader" :type="btn_type">{{btn_text}}</el-button>
+            </div>
         </div>
     </div>
 </template>
 
 <style lang="scss">
-    .fluentcrm_photo_card{
-        .fluentcrm_photo_holder{
-            img{
-                display: block;
-                max-height: 100px;
-                height: 80px;
-                width:80px;
+    .ninja-upload-photo-element{
+        .ninja-upload-container{
+            display: flex;
+            .upload-items{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .ninja_upload_photo_container{
+                    margin-bottom:15px;
+                }
+                .ninja-upload-icon{
+                    font-size: 35px;
+                }
+                .ninja_popup_photo_holder_element{
+                    img{
+                        display: block;
+                        max-height: 100px;
+                        height: 80px;
+                        width:80px;
+                    }
+                }
             }
-        }
-        .ninja_button_container {
-            margin-top:15px;
         }
     }
 </style>

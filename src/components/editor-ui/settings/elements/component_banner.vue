@@ -21,9 +21,8 @@
                  <div class="ninja_popup_item">
                     <label class="ninja_popup_label">BANNER IMAGE</label>
                     <photo-widget
-                        class="fc_photo_changed"
-                        btn_type="default"
-                        :btn_text="'+ Photo'"
+                        btn_type="primary"
+                        :btn_text="'Select File'"
                         :btn_mode="true"
                         @changed="updateAvatar"
                         v-model="configs.image_url"

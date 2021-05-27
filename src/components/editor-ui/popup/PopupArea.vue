@@ -2,7 +2,7 @@
     <div class="nfd-container">
         <div class="nfd-row" :class="popup_meta.layout_type" v-if="popup_meta.popup_components">
             <div class="ninja-popup-modal">
-                <div class="ninja-popup-modal-content" :style="[popup_meta.layout.background_image_url ? `background-image:url(${popup_meta.layout.background_image_url});` : '', popup_meta.layout.corners === 'rounded' ? 'border-radius: 8px;' : '']">
+                <div class="ninja-popup-modal-content ninja-popup-content-styler" :style="[popup_meta.layout.background_image_url ? `background-image:url(${popup_meta.layout.background_image_url});` : '', popup_meta.layout.corners === 'rounded' ? 'border-radius: 8px;' : '']">
                     <div class="ninja-popup-close-button-container" v-if="popup_meta.layout.display_close_button === 'true'">
                         <div class="ninja-countdown-timer-bar-close ninja-popup-close-button" :style="`color:${popup_meta.layout.close_button_color}`"></div>
                     </div>

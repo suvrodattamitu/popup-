@@ -1,13 +1,13 @@
 <template>
     <div>
-        <el-row>
+        <!-- <el-row>
             <el-col :span="24">
                 <div class="ninja_popup_item">
                     <label class="ninja_popup_label">WIDTH</label>
                     <el-input type="number" v-model="layout_configs.width" size="mini"></el-input>
                 </div>
             </el-col>
-        </el-row>
+        </el-row> -->
 
         <el-row>
             <el-col :span="24">
@@ -30,9 +30,8 @@
                  <div class="ninja_popup_item">
                     <label class="ninja_popup_label">BACKGROUND IMAGE</label>
                     <photo-widget
-                        class="fc_photo_changed"
-                        btn_type="default"
-                        :btn_text="'+ Photo'"
+                        btn_type="primary"
+                        :btn_text="'Select File'"
                         :btn_mode="true"
                         @changed="updateAvatar"
                         v-model="layout_configs.background_image_url"
@@ -41,7 +40,7 @@
             </el-col>
         </el-row>
 
-        <el-row>
+        <!-- <el-row>
             <el-col :span="24">
                 <div class="ninja_popup_item">
                     <label class="ninja_popup_label">IMAGE OVERLAY COLOR</label>
@@ -54,7 +53,7 @@
                     </div>
                 </div>
             </el-col>
-        </el-row>
+        </el-row> -->
 
         <el-row>
             <el-col :span="24">
@@ -88,7 +87,7 @@
         <el-row>
             <el-col :span="24" v-if="layout_configs.display_close_button === 'true'">
                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">COLOR</label>
+                    <label class="ninja_popup_label">CLOSE BUTTON COLOR</label>
                     <div class="color-picker">
                         <el-color-picker
                             size="mini" 
@@ -124,6 +123,14 @@ export default {
                 value: 'square',
                 label: 'Square'
             }],
+        }
+    },
+    watch: {
+        'layout_configs.background_color': {
+            handler(val){
+                window.mitt.emit('update_css')
+            },
+            deep: true
         }
     },
     methods: {

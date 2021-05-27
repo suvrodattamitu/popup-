@@ -3,7 +3,7 @@
         <el-row>
             <el-col :span="24">
                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">SCALE (in % )</label>
+                    <label class="ninja_popup_label">SCALE, (in %)</label>
                     <el-slider v-model="configs.scale" :min="10" :max="100"></el-slider>
                 </div>
             </el-col>
@@ -14,9 +14,8 @@
                  <div class="ninja_popup_item">
                     <label class="ninja_popup_label">IMAGE</label>
                     <photo-widget
-                        class="fc_photo_changed"
-                        btn_type="default"
-                        :btn_text="'+ Photo'"
+                        btn_type="primary"
+                        :btn_text="'Select File'"
                         :btn_mode="true"
                         @changed="updateAvatar"
                         v-model="configs.image_url"
