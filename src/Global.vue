@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
       <div class="ninja_popup_main_nav">
-          <span>{{ 'Ninja Popup' }}</span>
+          <span>{{ 'Ninja Popups' }}</span>
           <router-link v-for="menuItem in topMenus" :key="menuItem.route" 
           exact
           :to="{ name: menuItem.route }">

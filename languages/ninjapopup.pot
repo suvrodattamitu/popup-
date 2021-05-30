@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.5.2; wp-5.7.1\n"
-"X-Domain: ninjapopup"
+"X-Domain: ninjapopups"
 
 #: app/Menu.php:119
 msgid "All Collections"

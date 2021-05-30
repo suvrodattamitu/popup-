@@ -1,14 +1,14 @@
 <?php
 
-namespace NinjaPopup\Views;
-use NinjaPopup\Views\View;
+namespace NinjaPopups\Views;
+use NinjaPopups\Views\View;
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Admin App Renderer and Handler
+ * Render Admin
  * @since 1.0.0
  */
 class AdminApp

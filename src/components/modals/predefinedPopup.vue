@@ -14,7 +14,6 @@
                         <img :src="popup.image" alt="">
                         <div class="ninja-popup-inner-text ninja-popup-inner-text-hoverable">
                             <h3 class="ninja-modal-title">{{ popup.title }}</h3>
-                            <p>{{ popup.description }}</p>
                             <div>
                                 <el-button :loading="creatingTemplate" type="primary" size="small"
                                     @click="createPopupMeta(name, popup)"
@@ -60,7 +59,6 @@
                     .then(response => {
                         if( response.data ) {
                             this.predefinedTemplates = response.data.templates
-                            console.log(this.predefinedTemplates)
                         }
                     }).fail(error => {
 
@@ -75,7 +73,6 @@
                     type: templateType
                 })
                     .then(response => {
-
                         if( response.data ) {
                             this.$message({
                                 showClose: true,
@@ -85,7 +82,6 @@
                             let templateId = response.data.template_id;
                             this.$router.push('/popup-editor/'+templateId);
                         }
-
                     }).fail(error => {
                         this.$message({
                             showClose: true,
@@ -130,7 +126,7 @@
         }
 
         width: 200px;
-        height: 250px;
+        // height: 250px;
         border: 1px solid #ccc;
         display: inline-block;
         padding: 5px;
@@ -173,6 +169,7 @@
         &-inner-text {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
 
             &-hoverable {

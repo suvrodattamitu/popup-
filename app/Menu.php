@@ -1,7 +1,7 @@
 <?php
 
-namespace NinjaPopup;
-use NinjaPopup\Views\View;
+namespace NinjaPopups;
+use NinjaPopups\Views\View;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -32,27 +32,27 @@ class Menu
             return;
         }
 
-        $title = __('Ninja Popup', 'ninjapopup');
+        $title = __('Ninja Popups', 'ninjapopups');
 
         global $submenu;
         add_menu_page(
             $title,
             $title,
             'manage_options',
-            'ninjapopup',
+            'ninjapopups',
             array($this, 'render'),
             $this->getIcon(),
             25
         );
-        $submenu['ninjapopup']['allpopups'] = array(
-            __('All Popups', 'ninjapopup'),
+        $submenu['ninjapopups']['allpopups'] = array(
+            __('All Popups', 'ninjapopups'),
             'manage_options',
-            'admin.php?page=ninjapopup#/',
+            'admin.php?page=ninjapopups#/',
         );
-        $submenu['ninjapopup']['support'] = array(
-            __('Support', 'ninjapopup'),
+        $submenu['ninjapopups']['support'] = array(
+            __('Support', 'ninjapopups'),
             'manage_options',
-            'admin.php?page=ninjapopup#/support',
+            'admin.php?page=ninjapopups#/support',
         );
     }
 
@@ -65,7 +65,7 @@ class Menu
      **/
     public function render()
     {
-        do_action('ninjapopup/render_admin_app');
+        do_action('ninjapopups/render_admin_app');
     }
 
     /**
@@ -96,32 +96,27 @@ class Menu
      **/
     public function enqueueAssets()
     {
-        if (isset($_GET['page']) && $_GET['page'] == 'ninjapopup') {
+        if (isset($_GET['page']) && $_GET['page'] == 'ninjapopups') {
 
-            wp_enqueue_style('ninjapopup_admin_app', NINJAPOPUP_URL . 'public/css/ninjapopup-admin.css', array(), NINJAPOPUP_VERSION);
-            wp_enqueue_style('ninjapopup_app', NINJAPOPUP_URL . 'public/css/popup.css', array(), NINJAPOPUP_VERSION);
+            wp_enqueue_style('ninjapopups_admin_app', NINJAPOPUPS_URL . 'public/css/ninjapopups-admin.css', array(), NINJAPOPUPS_VERSION);
+            wp_enqueue_style('ninjapopups_app', NINJAPOPUPS_URL . 'public/css/popup.css', array(), NINJAPOPUPS_VERSION);
 
-            wp_enqueue_script('ninjapopup_boot', NINJAPOPUP_URL . 'public/js/ninjapopup-boot.js', array('jquery'), NINJAPOPUP_VERSION, true);
+            wp_enqueue_script('ninjapopups_boot', NINJAPOPUPS_URL . 'public/js/ninjapopups-boot.js', array('jquery'), NINJAPOPUPS_VERSION, true);
 
-            // 3rd party developers can now add their scripts here
-            do_action('ninjapopup/booting_admin_app');
-
-            wp_enqueue_script('ninjapopup_admin_app', NINJAPOPUP_URL . 'public/js/ninjapopup-admin.js', array('ninjapopup_boot'), NINJAPOPUP_VERSION, true);
+            wp_enqueue_script('ninjapopups_admin_app', NINJAPOPUPS_URL . 'public/js/ninjapopups-admin.js', array('ninjapopups_boot'), NINJAPOPUPS_VERSION, true);
 
             wp_enqueue_editor();
             wp_enqueue_media();
 
-            $ninjapopupAdminVars = apply_filters('ninjapopup/admin_app_vars', array(
-
+            $ninjapopupsAdminVars = apply_filters('ninjapopups/admin_app_vars', array(
                 'i18n' => array(
-                    'All Collections' => __('All Collections', 'ninjapopup')
+                    'All Collections' => __('All Collections', 'ninjapopups')
                 ),
-                'assets_url' => NINJAPOPUP_URL . 'public',
+                'assets_url' => NINJAPOPUPS_URL . 'public',
                 'ajaxurl' => admin_url('admin-ajax.php'),
-
             ));
 
-            wp_localize_script('ninjapopup_boot', 'NinjaPopupAdmin', $ninjapopupAdminVars);
+            wp_localize_script('ninjapopups_boot', 'NinjaPopupsAdmin', $ninjapopupsAdminVars);
         }
     }
 }

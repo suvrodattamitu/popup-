@@ -1,15 +1,15 @@
 <?php
 
-namespace NinjaPopup\Views;
-use NinjaPopup\Views\View;
-use NinjaPopup\Model\Popup;
+namespace NinjaPopups\Views;
+use NinjaPopups\Views\View;
+use NinjaPopups\Model\Popup;
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Public App Renderer and Handler
+ * Render Popup
  * @since 1.0.0
  */
 class FrontendApp
@@ -29,7 +29,7 @@ class FrontendApp
             return __('No data is available', 'ninjayoutubefeed');
         }
 
-        wp_enqueue_style('ninjapopup_app', NINJAPOPUP_URL . 'public/css/popup.css', array(), NINJAPOPUP_VERSION);
+        wp_enqueue_style('ninjapopups_app', NINJAPOPUPS_URL . 'public/css/popup.css', array(), NINJAPOPUPS_VERSION);
 
         $generatedCss = $this->generateCSS( $popupConfigs );
         update_post_meta($popupId, '_ninja_popup_css', $generatedCss);
@@ -38,7 +38,7 @@ class FrontendApp
             echo "<style id='wp_pricing_css'>". $generatedCss ."</style>";
         });
 
-        wp_enqueue_script('ninja_popup_manager', NINJAPOPUP_URL . 'public/js/popup_manager.js', array('jquery'), NINJAPOPUP_VERSION, true);
+        wp_enqueue_script('ninja_popup_manager', NINJAPOPUPS_URL . 'public/js/popup_manager.js', array('jquery'), NINJAPOPUPS_VERSION, true);
 
         $popupHtml = $this->popupHtml( $popupConfigs );
         return $popupHtml;
@@ -49,13 +49,9 @@ class FrontendApp
         $components = $popupConfigs['popup_components'];
 
         $popupHtml = '';
-        // if ($popupHtml = get_post_meta($this->popupId, '_ninja_popup_html', true)) {
-        //     return $popupHtml;
-        // }
-
-        // $inline = View::make('Frontend.Css.popup', [
-        //     'popup_meta' => $popupConfigs,
-        // ]);
+        if ($popupHtml = get_post_meta($this->popupId, '_ninja_popup_html', true)) {
+            return $popupHtml;
+        }
 
         $bannerIndex = array_search('banner', array_column($components, 'key'));
         $componentWrapperClass = ($bannerIndex !== false && ($components[$bannerIndex]['position'] === 'top' || $components[$bannerIndex]['position'] === 'bottom')) ? 'ninja-popup-components-wrapper-column' : '';
@@ -114,12 +110,9 @@ class FrontendApp
     public function generateCSS($popupConfigs)
     {
         $generatedCss = '';
-
-        // var_dump($generatedCss);
-        // die();
-        // if ($generatedCss = get_post_meta($this->popupId, '_ninja_popup_css', true)) {
-        //     return $generatedCss;
-        // }
+        if ($generatedCss = get_post_meta($this->popupId, '_ninja_popup_css', true)) {
+            return $generatedCss;
+        }
 
         foreach( $popupConfigs['popup_components'] as $component) {
             $componentKey = $component['key'];

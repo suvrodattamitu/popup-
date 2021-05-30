@@ -30,7 +30,7 @@ export default {
     
     data() {
         return {
-            assets_url: window.NinjaPopupAdmin.assets_url,
+            assets_url: window.NinjaPopupsAdmin.assets_url,
             items: {
                 support1: {
                     title: 'Need Help?',

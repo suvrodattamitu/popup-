@@ -1,91 +1,93 @@
 <template>
     <div class="ninja_content_wrap">
-        <div class="ninja_all_popups">
+        <div class="ninja_all_popups" v-loading="loading">
             <el-row>
                 <el-col>
                     <predefinedPopup v-model:visibility="showAddFormModal"></predefinedPopup>
-                    <div class="ninja_popup_table" v-loading="loading">
-                        <div class="ninja_table_actions">
-                            <div class="nina_search_action">
-                                <el-input type="text" size="medium" v-model="search_string"  @keyup.enter="getallPopups">
-                                    <template #suffix>
-                                        <el-button  size="medium" icon="el-icon-search" @click="getallPopups"></el-button>
-                                    </template>
-                                </el-input>
-                            </div>
-                            <div class="ninja_add_new_actions">
-                                <el-button size="mini"  @click="showAddFormModal = true" type="primary" icon="el-icon-circle-plus">
-                                    Add Popup
-                                </el-button>
-                            </div>
-                        </div>
-                        <el-table
-                            :data="allPopups"
-                            @selection-change="handleSelectionChange"
-                            style="width: 100%"
-                        >
-                            <el-table-column
-                            type="selection"
-                            width="55">
-                            </el-table-column>
-
-                            <el-table-column type="expand">
-                            <template #default="props">
-                                <p>Title: {{ props.row.post_title }}</p>
-                            </template>
-                            </el-table-column>
-
-                            <el-table-column
-                            label="Name"
-                            width="400"
-                            >
-                            <template #default="scope">
-                                <strong>{{ scope.row.post_title }}</strong>
-                                <div class="row-actions ninja_row_actions">
-                                    <router-link :to="'/popup-editor/'+scope.row.ID">
-                                        Edit
-                                    </router-link>
-                                    |
-                                    <a @click="confirmDeletePopup(scope.row)" class="delete_btn">Delete</a>
-                                    |
-                                    <a @click.prevent="duplicatePopup(scope.row)">Duplicate</a>
+                    <welcome v-if="!allPopups.length" v-model="showAddFormModal"></welcome>
+                    <div v-else>
+                        <div class="ninja_popup_table">
+                            <div class="ninja_table_actions">
+                                <div class="nina_search_action">
+                                    <el-input type="text" size="medium" v-model="search_string"  @keyup.enter="getallPopups">
+                                        <template #suffix>
+                                            <el-button  size="medium" icon="el-icon-search" @click="getallPopups"></el-button>
+                                        </template>
+                                    </el-input>
                                 </div>
-                            </template>
-                            </el-table-column>
-
-                            <el-table-column 
-                            label="Type"
-                            prop="post_content"
+                                <div class="ninja_add_new_actions">
+                                    <el-button size="mini"  @click="showAddFormModal = true" type="primary" icon="el-icon-circle-plus">
+                                        Add Popup
+                                    </el-button>
+                                </div>
+                            </div>
+                            <el-table
+                                :data="allPopups"
+                                @selection-change="handleSelectionChange"
+                                style="width: 100%"
                             >
-                            
-                            </el-table-column>
+                                <el-table-column
+                                type="selection"
+                                width="55">
+                                </el-table-column>
 
-                            <el-table-column
-                                label="Short Code"
-                                width="350"
-                            >
-                            <template #default="scope">
-                                <code class="copy"
-                                    :data-clipboard-text='`[ninja_popup_layout id="${scope.row.ID}" ]`'>
-                                    <i class="el-icon-document"></i> [ninja_popup_layout id="{{ scope.row.ID }}"]
-                                </code>
-                            </template>
-                            </el-table-column>
-                            
-                        </el-table>
-                    </div>
+                                <el-table-column type="expand">
+                                <template #default="props">
+                                    <p>Title: {{ props.row.post_title }}</p>
+                                </template>
+                                </el-table-column>
 
-                    <div class="ninja_pagination">
-                        <el-pagination
-                            background
-                            @size-change="handleSizeChange"
-                            @current-change="handleCurrentChange"
-                            :current-page="page_number"
-                            :page-size="per_page"
-                            :page-sizes="pageSizes"
-                            layout="total, sizes, prev, pager, next"
-                            :total="total">
-                        </el-pagination>
+                                <el-table-column
+                                label="Name"
+                                width="400"
+                                >
+                                <template #default="scope">
+                                    <strong>{{ scope.row.post_title }}</strong>
+                                    <div class="row-actions ninja_row_actions">
+                                        <router-link :to="'/popup-editor/'+scope.row.ID">
+                                            Edit
+                                        </router-link>
+                                        |
+                                        <a @click="confirmDeletePopup(scope.row)" class="delete_btn">Delete</a>
+                                        |
+                                        <a @click.prevent="duplicatePopup(scope.row)">Duplicate</a>
+                                    </div>
+                                </template>
+                                </el-table-column>
+
+                                <el-table-column 
+                                label="Type"
+                                prop="post_content"
+                                >
+                                
+                                </el-table-column>
+
+                                <el-table-column
+                                    label="Short Code"
+                                    width="350"
+                                >
+                                <template #default="scope">
+                                    <code class="copy"
+                                        :data-clipboard-text='`[ninja_popup_layout id="${scope.row.ID}" ]`'>
+                                        <i class="el-icon-document"></i> [ninja_popup_layout id="{{ scope.row.ID }}"]
+                                    </code>
+                                </template>
+                                </el-table-column>
+                            </el-table>
+                        </div>
+
+                        <div class="ninja_pagination">
+                            <el-pagination
+                                background
+                                @size-change="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="page_number"
+                                :page-size="per_page"
+                                :page-sizes="pageSizes"
+                                layout="total, sizes, prev, pager, next"
+                                :total="total">
+                            </el-pagination>
+                        </div>
                     </div>
                 </el-col>
             </el-row>
@@ -120,9 +122,11 @@
         .ninja_pagination{
             float:right;
             margin:15px 0px;
+            .el-input__inner{
+                background-color: #fff;
+            }
         }
         .ninja_popup_table{
-            
             .ninja_table_actions{
                 display: flex;
                 margin:15px 0px;
@@ -130,10 +134,8 @@
                 justify-content: space-between;
                 .nina_search_action{
                     display:flex;
-                    
                 }
             }
-
         }
         .ninja_row_actions{
             a{
@@ -142,18 +144,19 @@
                 &.delete_btn{
                    color:#ff0000; 
                 }
-            }
-            
+            } 
         }
     }
 </style>
 
 <script type="text/babel">
     import predefinedPopup from '../components/modals/predefinedPopup.vue';
+    import Welcome from './editor-ui/pieces/Welcome.vue';
 
     export default {
         components:{
-            predefinedPopup
+            predefinedPopup,
+            Welcome
         },
         data() {
             return {
@@ -244,9 +247,7 @@
                     popup_id: popup.ID
                 })
                     .then(response => {
-
                         if( response.data ) {
-
                             this.$message({
                                 showClose: true,
                                 message: response.data.message,
@@ -254,9 +255,7 @@
                             });
                             let popupId = response.data.popup_id
                             this.$router.push('/popup-editor/'+popupId)
-
                         }
-
                     }).fail((error) => {
 
                     }).always(() => {

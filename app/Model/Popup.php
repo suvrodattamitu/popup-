@@ -1,6 +1,6 @@
 <?php
 
-namespace NinjaPopup\Model;
+namespace NinjaPopups\Model;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -14,28 +14,27 @@ class Popup
 {
     public function predefinedPopups()
     {
-        $asset_url = NINJAPOPUP_URL . 'public';
+        $asset_url = NINJAPOPUPS_URL . 'public';
         return array(
-            'template_one' => array(
+            'christmas_sale' => array(
                 'title' => 'Christmas Sale',
-                'description' => 'Raise your customer engagement by showing the Christmas Sale Templates',
-                'image'      => $asset_url.'/images/popups/one.png',
-                'layout_type'   => 'template_one',
+                'image'      => $asset_url.'/images/popups/layout-one.png',
+                'layout_type'   => 'Christmas Sale',
                 'popup_components' => array(
-                    array(
-                        'key' => 'image',
-                        'selector'  => 'ninja-popup-image1',
-                        'image_url' => $asset_url.'/images/popups/christmas-sale.png',
-                        'scale' => 50,
-                    ),
                     array(
                         'key' => 'spacing',
                         'selector'  => 'ninja-popup-spacing1',
                         'size' => 20,
                     ),
                     array(
+                        'key' => 'image',
+                        'selector'  => 'ninja-popup-image1',
+                        'image_url' => $asset_url.'/images/popups/gift-box.png',
+                        'scale' => 25,
+                    ),
+                    array(
                         'key' => 'title',
-                        'value' => 'Christmas Sale!',
+                        'value' => 'BEST CHRISTMAS GIFTS',
                         'selector'  => 'ninja-popup-title1',
                         'text_color' => '#fff',
                         'text_size'  => 28,
@@ -43,17 +42,17 @@ class Popup
                     ),
                     array(
                         'key' => 'title',
-                        'value' => 'Christmas Sale!',
+                        'value' => '50% Off For All',
                         'selector'  => 'ninja-popup-title2',
                         'text_color' => '#fff',
-                        'text_size'  => 10,
+                        'text_size'  => 14,
                         'text_weight' => 'bold'
                     ),
                     array(
                         'key' => 'button',
                         'text' => 'START SHOPPING',
                         'selector'  => 'ninja-popup-button1',
-                        'background_color' => '#A8E510',
+                        'background_color' => '#E53B10',
                         'text_color' => '#fff',
                         'size'  => 12,
                         'width' => 337
@@ -61,8 +60,8 @@ class Popup
                 ),
                 'layout' => array(
                     'width' => 600,
-                    'corners' => 'rounded',
-                    'background_image_url'  => $asset_url.'/images/popups/christmas-sale.jpeg',
+                    'corners' => 'square',
+                    'background_image_url'  => $asset_url.'/images/popups/christmas-sale.png',
                     'background_image_overlay_color' => '',
                     'background_color'  => '#fff',
                     'display_close_button'  => 'true',
@@ -73,15 +72,14 @@ class Popup
                 )
             ),
 
-            'template_two' => array(
-                'title' => 'Christmas Sale',
-                'description' => 'Raise your customer engagement by showing the Christmas Sale Templates',
-                'image'      => $asset_url.'/images/popups/one.png',
-                'layout_type'   => 'template_two',
+            'discount_offer' => array(
+                'title' => 'Discount Offer',
+                'image'      => $asset_url.'/images/popups/layout-two.png',
+                'layout_type'   => 'Discount Offer',
                 'popup_components' => array(
                     array(
                         'key' => 'title',
-                        'value' => '3 DAYS ONLY',
+                        'value' => '2 DAYS ONLY',
                         'selector'  => 'ninja-popup-title1',
                         'text_color' => '#000',
                         'text_size'  => 42,
@@ -89,7 +87,7 @@ class Popup
                     ),
                     array(
                         'key' => 'title',
-                        'value' => 'You can get an exclusive discount 15%',
+                        'value' => 'Get exclusive 10% discount',
                         'selector'  => 'ninja-popup-title2',
                         'text_color' => '#000',
                         'text_size'  => 20,
@@ -103,9 +101,9 @@ class Popup
                     ),
                     array(
                         'key' => 'button',
-                        'text' => 'START SHOPPING',
+                        'text' => 'Yes, I want 10%!!',
                         'selector'  => 'ninja-popup-button1',
-                        'background_color' => '#A8E510',
+                        'background_color' => '#E53B10',
                         'text_color' => '#fff',
                         'size'  => 12,
                         'width' => 337
@@ -113,13 +111,64 @@ class Popup
                     array(
                         'key' => 'banner',
                         'selector'  => 'ninja-popup-banner1',
-                        'image_url' => $asset_url.'/images/popups/offer.jpeg',
+                        'image_url' => $asset_url.'/images/popups/sale-offer.png',
                         'position' => 'right',
                     )
                 ),
                 'layout' => array(
                     'width' => 600,
                     'corners' => 'rounded',
+                    'background_image_url'  => '',
+                    'background_image_overlay_color' => '',
+                    'background_color'  => '#fff',
+                    'display_close_button'  => 'true',
+                    'close_button_color' => '#000'
+                ),
+                'settings'  => array(
+                    'display_time' => 30
+                )
+            ),
+
+            'special_offer' => array(
+                'title' => 'Special Offer',
+                'image'      => $asset_url.'/images/popups/layout-three.png',
+                'layout_type'   => 'Special Offer',
+                'popup_components' => array(
+                    array(
+                        'key' => 'image',
+                        'selector'  => 'ninja-popup-image1',
+                        'image_url' => $asset_url.'/images/popups/super-sale.png',
+                        'scale' => 30,
+                    ),
+                    array(
+                        'key' => 'title',
+                        'value' => 'A special discount for you',
+                        'selector'  => 'ninja-popup-title1',
+                        'text_color' => '#000',
+                        'text_size'  => 42,
+                        'text_weight' => 'bold'
+                    ),
+                    array(
+                        'key' => 'title',
+                        'value' => '50% Off on all of our products ',
+                        'selector'  => 'ninja-popup-title2',
+                        'text_color' => '#000',
+                        'text_size'  => 20,
+                        'text_weight' => 'bold'
+                    ),
+                    array(
+                        'key' => 'button',
+                        'text' => 'START SHOPPING',
+                        'selector'  => 'ninja-popup-button1',
+                        'background_color' => '#A8E510',
+                        'text_color' => '#fff',
+                        'size'  => 12,
+                        'width' => 337
+                    )
+                ),
+                'layout' => array(
+                    'width' => 600,
+                    'corners' => 'square',
                     'background_image_url'  => '',
                     'background_image_overlay_color' => '',
                     'background_color'  => '#fff',

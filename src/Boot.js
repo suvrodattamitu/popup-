@@ -1,2 +1,2 @@
-import NinjaPopup from './NinjaPopup';
-window.NinjaPopup = new NinjaPopup();
+import NinjaPopups from './NinjaPopups';
+window.NinjaPopups = new NinjaPopups();

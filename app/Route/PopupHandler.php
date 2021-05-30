@@ -1,7 +1,7 @@
 <?php
 
-namespace NinjaPopup\Route;
-use NinjaPopup\Model\Popup;
+namespace NinjaPopups\Route;
+use NinjaPopups\Model\Popup;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +11,7 @@ class PopupHandler
 {
     /**
      *
-     * Register end points
+     * Register Urls
      *
      * @since 1.0.0
      *
@@ -23,7 +23,7 @@ class PopupHandler
 
     /**
      *
-     * validate route
+     * validate routes
      *
      * @return method name
      * @since 1.0.0
@@ -65,7 +65,7 @@ class PopupHandler
         );
         wp_update_post($data);
         wp_send_json_success(array(
-            'message' => __(' Title successfully updated', 'ninjapopup')
+            'message' => __(' Title successfully updated', 'ninjapopups')
         ), 200);
     }
 
@@ -98,7 +98,7 @@ class PopupHandler
         delete_post_meta($popupId, '_ninja_popup_configs', true);
         delete_post_meta($popupId, '_ninja_popup_html', true);
         wp_send_json_success([
-            'message' => __('Popup deleted successfully', 'ninjapopup'),
+            'message' => __('Popup deleted successfully', 'ninjapopups'),
         ], 200);
     }
 
@@ -122,7 +122,7 @@ class PopupHandler
         }
 
         wp_send_json_success([
-            'message' => __('Popup successfully duplicated', 'ninjapopup'),
+            'message' => __('Popup successfully duplicated', 'ninjapopups'),
             'popup_id' => $newPopupId
         ], 200);
     }
@@ -163,13 +163,13 @@ class PopupHandler
             }
 
             wp_send_json_success(array(
-                'message' => __('Template Successfully created', 'ninjapopup'),
+                'message' => __('Template Successfully created', 'ninjapopups'),
                 'template_id' => $templateId
             ), 200);
         }
 
         wp_send_json_error([
-            'message' => __("The selected template couldn't be found.", 'ninjapopup')
+            'message' => __("The selected template couldn't be found.", 'ninjapopups')
         ], 423);
     }
 
@@ -179,8 +179,8 @@ class PopupHandler
         $popupDetails = get_post($popupId);
         $popupMeta    = get_post_meta($popupId, '_ninja_popup_configs', true);
 
-        // $popupMeta = (new Popup())->predefinedPopups();
-        // $popupMeta = $popupMeta['template_two'];
+        $popupMeta = (new Popup())->predefinedPopups();
+        $popupMeta = $popupMeta['christmas_sale'];
 
         wp_send_json_success([
             'message' => 'success',
@@ -200,7 +200,7 @@ class PopupHandler
         do_action('ninja_popup_meta_updated', $popupId, $popupMeta);
 
         wp_send_json_success([
-            'message'   => __('Congrats, successfully saved!', 'ninjapopup'),
+            'message'   => __('Congrats, successfully saved!', 'ninjapopups'),
         ], 200);
     }
 
@@ -210,7 +210,6 @@ class PopupHandler
         $predefinedPopups = (new Popup())->predefinedPopups();
         foreach ($predefinedPopups as $key => $item) {
             $data[$key] = array(
-                'description'      => $item['description'],
                 'title'      => $item['title'],
                 'layout_type'=> $item['layout_type'],
                 'image'      => $item['image'],

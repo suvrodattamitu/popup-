@@ -4,8 +4,8 @@
 @import './components/settings';
 @import './components/support_and_docs';
 @import '../common/globals';
-//wordpress default admin panel margin issue resolve
-.toplevel_page_ninjapopup{
+
+.toplevel_page_ninjapopups{
     #wpwrap{
         > #wpcontent{
             padding-left: 0;
@@ -34,7 +34,7 @@
     color: #000;
     font-size: 14px;
     text-transform: capitalize;
-    padding: 20px 15px;
+    padding: 12px 15px;
     display: inline-block;
     transition: 0.4s;
     &.router-link-exact-active{
@@ -47,8 +47,7 @@
   }
 }
 
-//content wrapper
-.ninja_popup_content{
+.ninja_content_wrap {
   padding-right: 15px;
   padding-left: 15px;
 }
