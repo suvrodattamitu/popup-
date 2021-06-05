@@ -2,12 +2,12 @@
     <div>
         <el-row>
             <el-col v-for="(item, i) in items" :key="i" :xs="24" :md="8">
-              <div class="ninja_popup_docs_wrap">
+              <div class="fizzy_popup_docs_wrap">
                 <img :src="assets_url+item.img" alt="" />
-                <div class="ninja_popup_docs_title">
+                <div class="fizzy_popup_docs_title">
                   <h3>{{ item.title }}</h3>
                 </div>
-                <div class="ninja_popup_docs_description">
+                <div class="fizzy_popup_docs_description">
                   <p>
                     {{ item.des }}
                   </p>
@@ -30,7 +30,7 @@ export default {
     
     data() {
         return {
-            assets_url: window.NinjaPopupsAdmin.assets_url,
+            assets_url: window.FizzyPopupsAdmin.assets_url,
             items: {
                 support1: {
                     title: 'Need Help?',

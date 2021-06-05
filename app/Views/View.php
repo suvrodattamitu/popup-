@@ -1,13 +1,13 @@
 <?php 
 
-namespace NinjaPopups\Views;
+namespace FizzyPopups\Views;
 
 class View 
 {
     public static function make($path, $data = [])
     {
         $path = str_replace('.', DIRECTORY_SEPARATOR, $path);
-        $file = NINJAPOPUPS_DIR.'app/Views/'.$path.'.php';
+        $file = FIZZYPOPUPS_DIR.'app/Views/'.$path.'.php';
         ob_start();
         extract($data);
         include $file;

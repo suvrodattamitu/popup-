@@ -1,6 +1,6 @@
 <?php
 
-namespace NinjaPopups\Model;
+namespace FizzyPopups\Model;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -14,7 +14,7 @@ class Popup
 {
     public function predefinedPopups()
     {
-        $asset_url = NINJAPOPUPS_URL . 'public';
+        $asset_url = FIZZYPOPUPS_URL . 'public';
         return array(
             'christmas_sale' => array(
                 'title' => 'Christmas Sale',
@@ -23,19 +23,19 @@ class Popup
                 'popup_components' => array(
                     array(
                         'key' => 'spacing',
-                        'selector'  => 'ninja-popup-spacing1',
+                        'selector'  => 'fizzy-popup-spacing1',
                         'size' => 20,
                     ),
                     array(
                         'key' => 'image',
-                        'selector'  => 'ninja-popup-image1',
+                        'selector'  => 'fizzy-popup-image1',
                         'image_url' => $asset_url.'/images/popups/gift-box.png',
                         'scale' => 25,
                     ),
                     array(
                         'key' => 'title',
                         'value' => 'BEST CHRISTMAS GIFTS',
-                        'selector'  => 'ninja-popup-title1',
+                        'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#fff',
                         'text_size'  => 28,
                         'text_weight' => 'bold'
@@ -43,7 +43,7 @@ class Popup
                     array(
                         'key' => 'title',
                         'value' => '50% Off For All',
-                        'selector'  => 'ninja-popup-title2',
+                        'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#fff',
                         'text_size'  => 14,
                         'text_weight' => 'bold'
@@ -51,7 +51,7 @@ class Popup
                     array(
                         'key' => 'button',
                         'text' => 'START SHOPPING',
-                        'selector'  => 'ninja-popup-button1',
+                        'selector'  => 'fizzy-popup-button1',
                         'background_color' => '#E53B10',
                         'text_color' => '#fff',
                         'size'  => 12,
@@ -80,29 +80,29 @@ class Popup
                     array(
                         'key' => 'title',
                         'value' => '2 DAYS ONLY',
-                        'selector'  => 'ninja-popup-title1',
+                        'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#000',
                         'text_size'  => 42,
                         'text_weight' => 'bold'
                     ),
                     array(
                         'key' => 'title',
-                        'value' => 'Get exclusive 10% discount',
-                        'selector'  => 'ninja-popup-title2',
+                        'value' => 'Get exclusive 70% discount',
+                        'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#000',
                         'text_size'  => 20,
                         'text_weight' => 'bold'
                     ),
                     array(
                         'key' => 'separator',
-                        'selector'  => 'ninja-popup-separator1',
+                        'selector'  => 'fizzy-popup-separator1',
                         'margin' => 4,
                         'color' => '#000'
                     ),
                     array(
                         'key' => 'button',
-                        'text' => 'Yes, I want 10%!!',
-                        'selector'  => 'ninja-popup-button1',
+                        'text' => 'Yes, I want 70%!!',
+                        'selector'  => 'fizzy-popup-button1',
                         'background_color' => '#E53B10',
                         'text_color' => '#fff',
                         'size'  => 12,
@@ -110,7 +110,7 @@ class Popup
                     ),
                     array(
                         'key' => 'banner',
-                        'selector'  => 'ninja-popup-banner1',
+                        'selector'  => 'fizzy-popup-banner1',
                         'image_url' => $asset_url.'/images/popups/sale-offer.png',
                         'position' => 'right',
                     )
@@ -136,22 +136,22 @@ class Popup
                 'popup_components' => array(
                     array(
                         'key' => 'image',
-                        'selector'  => 'ninja-popup-image1',
+                        'selector'  => 'fizzy-popup-image1',
                         'image_url' => $asset_url.'/images/popups/super-sale.png',
-                        'scale' => 30,
+                        'scale' => 20,
                     ),
                     array(
                         'key' => 'title',
                         'value' => 'A special discount for you',
-                        'selector'  => 'ninja-popup-title1',
+                        'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#000',
                         'text_size'  => 42,
                         'text_weight' => 'bold'
                     ),
                     array(
                         'key' => 'title',
-                        'value' => '50% Off on all of our products ',
-                        'selector'  => 'ninja-popup-title2',
+                        'value' => '50% off on all of our products ',
+                        'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#000',
                         'text_size'  => 20,
                         'text_weight' => 'bold'
@@ -159,7 +159,7 @@ class Popup
                     array(
                         'key' => 'button',
                         'text' => 'START SHOPPING',
-                        'selector'  => 'ninja-popup-button1',
+                        'selector'  => 'fizzy-popup-button1',
                         'background_color' => '#A8E510',
                         'text_color' => '#fff',
                         'size'  => 12,

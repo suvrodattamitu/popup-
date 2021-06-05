@@ -2,7 +2,7 @@
     position: fixed;
     display: none;
 }
-.ninja-popup-modal{
+.fizzy-popup-modal{
     z-index: 999;
     left: 0;
     top: 0;
@@ -12,7 +12,7 @@
     background-color: black;
     background-color: rgba(17, 17, 17, 0.7);
 
-    .ninja-popup-modal-content {
+    .fizzy-popup-modal-content {
         //background-color: #fefefe;
         margin: 15% auto;
         padding: 20px;
@@ -24,10 +24,10 @@
         background-size: cover;
         background-position: center;
 
-        .ninja-popup-close-button-container{
+        .fizzy-popup-close-button-container{
             display: flex;
             float: right;
-            .ninja-countdown-timer-bar-close {
+            .fizzy-countdown-timer-bar-close {
                 display: flex;
                 align-items: center;
                 // color: #fff;
@@ -50,35 +50,35 @@
                 }
             }
             
-            .ninja-countdown-timer-bar-close:before {
+            .fizzy-countdown-timer-bar-close:before {
                 transform: translate(-50%, -50%) rotateZ(45deg);
             }
             
-            .ninja-countdown-timer-bar-close:after {
+            .fizzy-countdown-timer-bar-close:after {
                 transform: translate(-50%, -50%) rotateZ(-45deg);
             }
         }
 
-        .ninja-popup-components-wrapper-column {
+        .fizzy-popup-components-wrapper-column {
             display: flex;
             flex-direction: column;
-            .ninja-popup-banner-container{
+            .fizzy-popup-banner-container{
                 flex-basis: 250px !important;
                 margin: 20px 0px;
             }
         }
 
-        .ninja-popup-components-wrapper{
+        .fizzy-popup-components-wrapper{
             display: flex;
             margin-top: 10px;
 
-            // .ninja-popup-banner-container{
+            // .fizzy-popup-banner-container{
             //     flex-basis: 0px;
             //     flex-grow: 1;
             //     min-width: 0px;
             //     position: relative;
 
-            //     .ninja-banner-component{
+            //     .fizzy-banner-component{
             //         position: absolute;
             //         top: 0;
             //         right: 0;
@@ -90,29 +90,29 @@
             //     }
             // }
 
-            .ninja-popup-components-container {
+            .fizzy-popup-components-container {
                 flex-basis: 0px;
                 flex-grow: 1;
                 min-width: 0px;
             }
 
-            .ninja-popup-component-container:not(:first-child) {
+            .fizzy-popup-component-container:not(:first-child) {
                 margin-top: 18px;
             }
-            .ninja-image-component-container{
+            .fizzy-image-component-container{
                 display: flex;
                 justify-content: center;
-                .ninja-image-component{
+                .fizzy-image-component{
                     display: flex;
                     align-items: center;
                     justify-content: center;
                 }
             }
 
-            // .ninja-popup-button-container{
+            // .fizzy-popup-button-container{
             //     display: flex;
             //     justify-content: center;
-            //     .ninja-button-component{
+            //     .fizzy-button-component{
             //         display: inline-flex;
             //         overflow: hidden;
             //         box-sizing: border-box;

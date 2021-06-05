@@ -1,7 +1,7 @@
 @import './editor/style_panel';
 @import './editor/timer_panel';
 
-.ninja_countdown_editor {
+.fizzy_countdown_editor {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -16,7 +16,7 @@
         .wpp_section_title{
             color: #fff;
             font-size: 16px;
-            .ninja_header_editing {
+            .fizzy_header_editing {
                 max-width: 400px;
                 .el-input {
                     display: inline-block;
@@ -35,9 +35,9 @@
         }
     }
 
-    .ninja_editor_body{
+    .fizzy_editor_body{
         width:100%;
-        .ninja_countdown_preview {
+        .fizzy_countdown_preview {
             width: 69%;
             margin: 10px;
             min-height: 450px;
@@ -49,7 +49,7 @@
             align-items: center;
             justify-content: center;
         }
-        .ninja_countdown_settings {
+        .fizzy_countdown_settings {
             width: 29%;
             float: right;
             .header{
@@ -100,15 +100,15 @@
 }
   
 @media (max-width: 600px) {
-    .ninja_countdown_editor {
-        .ninja_editor_body{
-            .ninja_countdown_preview {
+    .fizzy_countdown_editor {
+        .fizzy_editor_body{
+            .fizzy_countdown_preview {
                 width: 100%;
                 > div {
                     padding: 2em !important;
                 }
             }
-            .ninja_countdown_settings {
+            .fizzy_countdown_settings {
                 width: 100%;
             }
         }

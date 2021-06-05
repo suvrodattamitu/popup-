@@ -1,6 +1,6 @@
 <template>
-    <div class="ninja-popup-banner-container">
-        <div :class="`ninja-banner-component ${configs.selector}`" :style="`background-image:url(${configs.background_image_url})`">
+    <div class="fizzy-popup-banner-container">
+        <div :class="`fizzy-banner-component ${configs.selector}`" :style="`background-image:url(${configs.background_image_url})`">
         </div>
     </div>
 </template>

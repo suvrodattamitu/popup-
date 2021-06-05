@@ -1,5 +1,5 @@
 <template>
-    <div :class="`ninja-spacing-component ${configs.selector}`"></div>
+    <div :class="`fizzy-spacing-component ${configs.selector}`"></div>
 </template>
 
 <script>

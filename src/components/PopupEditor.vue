@@ -1,12 +1,12 @@
 <template>
-    <div class="ninja_countdown_wrapper">
-        <div class="ninja_countdown_editor">
+    <div class="fizzy_countdown_wrapper">
+        <div class="fizzy_countdown_editor">
             <div class="wpp_section_header">
                 <div class="wpp_section_title">
-                    <div class="ninja_header_show" v-if="!title_editing">
+                    <div class="fizzy_header_show" v-if="!title_editing">
                         <i style="cursor: pointer" @click="title_editing = true" class="el-icon-edit">{{popup_details.post_title}}</i>
                     </div>
-                    <div v-else class="ninja_header_editing">
+                    <div v-else class="fizzy_header_editing">
                         <el-input placeholder="Table Name" size="mini" v-model="popup_details.post_title"></el-input>
                         <el-button type="success" size="mini" @click="updatePopupTitle">Save</el-button>
                     </div>
@@ -15,8 +15,8 @@
                 <div class="wpp_section_logo">
                     <div class="wpp_upgrade_logo">
                         <code class="copy"
-                            :data-clipboard-text='`[ninja_popup_layout id="${popup_details.ID}"]`'>
-                            <i class="el-icon-document"></i> [ninja_popup_layout id="{{ popup_details.ID }}"]
+                            :data-clipboard-text='`[fizzy_popup_layout id="${popup_details.ID}"]`'>
+                            <i class="el-icon-document"></i> [fizzy_popup_layout id="{{ popup_details.ID }}"]
                         </code>
                     </div>
                 </div>
@@ -28,11 +28,11 @@
                 </div>
             </div>
             
-            <div class="ninja_editor_body" v-loading="loading">
-                <div class="ninja_countdown_preview" v-if="popup_meta">
+            <div class="fizzy_editor_body" v-loading="loading">
+                <div class="fizzy_countdown_preview" v-if="popup_meta">
                     <popup-area :popup_meta="popup_meta"></popup-area>
                 </div>
-                <div class="ninja_countdown_settings" v-if="popup_meta">
+                <div class="fizzy_countdown_settings" v-if="popup_meta">
                     <div class="settings_panel">
                         <el-tabs type="border-card">
                             <el-tab-pane>
@@ -170,14 +170,14 @@ export default {
         generateCSS(prefix) {
             let popup_meta = this.popup_meta;
 
-            let css = `.ninja-popup-banner-container{
+            let css = `.fizzy-popup-banner-container{
                 flex-basis: 0px;
                 flex-grow: 1;
                 min-width: 0px;
                 position: relative;
             }`;
 
-            css += `.ninja-popup-banner-container .ninja-banner-component{
+            css += `.fizzy-popup-banner-container .fizzy-banner-component{
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -188,7 +188,7 @@ export default {
                 background-position: center;
             }`;
 
-            css += `.ninja-popup-modal .ninja-popup-content-styler{
+            css += `.fizzy-popup-modal .fizzy-popup-content-styler{
                background-color: ${popup_meta.layout.background_color}; 
             }`;
 
@@ -206,11 +206,11 @@ export default {
 
                 //button
                 if( element.key === 'button' ) {
-                    css += `.ninja-popup-button-container{
+                    css += `.fizzy-popup-button-container{
                         display: flex;
                         justify-content: center;
                     }`;
-                    css += `.ninja-popup-button-container .ninja-button-component{
+                    css += `.fizzy-popup-button-container .fizzy-button-component{
                         display: inline-flex;
                         overflow: hidden;
                         box-sizing: border-box;
@@ -255,11 +255,11 @@ export default {
 
                 //separator
                 if( element.key === 'separator' ) {
-                    css += `.ninja-separator-container {
+                    css += `.fizzy-separator-container {
                         padding: ${element.margin}px 0px;
                     }`
 
-                    css += `.ninja-separator-component::before {
+                    css += `.fizzy-separator-component::before {
                         display: block;
                         border-top-width: 3px;
                         border-top-style: solid;
@@ -273,9 +273,9 @@ export default {
         },
 
         reloadCss() {
-            let classPrefix = '.ninja-popup-components-container';
+            let classPrefix = '.fizzy-popup-components-container';
             let popupCss = this.generateCSS(classPrefix);
-            jQuery('#ninja_popup_dynamic_style').html(popupCss);  
+            jQuery('#fizzy_popup_dynamic_style').html(popupCss);  
         }
         //css generate end
     },

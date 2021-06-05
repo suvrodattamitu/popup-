@@ -1,20 +1,20 @@
 import mitt from 'mitt';
 window.mitt = window.mitt || new mitt()
 
-window.NinjaPopups.app.mixin({
+window.FizzyPopups.app.mixin({
     
     methods: {
         $adminGet(options) {
-            options.action = 'ninja_popup_admin_ajax';
-            return window.jQuery.get(window.NinjaPopupsAdmin.ajaxurl, options);
+            options.action = 'fizzy_popup_admin_ajax';
+            return window.jQuery.get(window.FizzyPopupsAdmin.ajaxurl, options);
         },
     
         $adminPost(options) {
-            options.action = 'ninja_popup_admin_ajax';
-            return window.jQuery.post(window.NinjaPopupsAdmin.ajaxurl, options);
+            options.action = 'fizzy_popup_admin_ajax';
+            return window.jQuery.post(window.FizzyPopupsAdmin.ajaxurl, options);
         }
     }
 
 })
 
-window.NinjaPopups.app.mount('#ninjapopups-app')
+window.FizzyPopups.app.mount('#fizzypopups-app')

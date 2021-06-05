@@ -1,5 +1,5 @@
 
-.ninja-popup-content-styler{
+.fizzy-popup-content-styler{
     background-color: <?php echo esc_html($popup_meta['layout']['background_color']); ?> !important; 
     <?php if($popup_meta['layout']['corners'] === 'rounded'): ?>
     border-radius: 8px;

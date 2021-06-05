@@ -1,5 +1,5 @@
 <template>
-    <div :class="`ninja-title-component ${configs.selector}`">
+    <div :class="`fizzy-title-component ${configs.selector}`">
         {{ configs.value }} 
     </div>
 </template>

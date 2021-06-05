@@ -6,7 +6,7 @@
                 <el-collapse v-model="activeName" accordion>
                     <draggable  :list="popup_meta.popup_components" :component-data="getComponentData()" item-key="name">
                         <template #item="{element, index}">
-                            <div class="ninja-collapse-item">
+                            <div class="fizzy-collapse-item">
                                 <div class="item-reorder">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 14" focusable="false">
                                         <path d="M1,4c0.6,0,1,0.4,1,1S1.6,6,1,6S0,5.6,0,5S0.4,4,1,4L1,4z"></path>
@@ -35,7 +35,7 @@
 </template>
 
 <style lang="scss" scoped>
-    .ninja-collapse-item{
+    .fizzy-collapse-item{
         .item-reorder{
             vertical-align: middle;
             display: table-cell;

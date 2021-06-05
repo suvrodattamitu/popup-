@@ -7,13 +7,13 @@
             top="40px"
             width="55%"
         >
-            <div v-loading="fetching" class="ninja-popup-group">
-                <div v-for="(popup, name) in predefinedTemplates" :key="name" class="ninja-popup">
-                    <div class="ninja-popup-inner-item">
-                        <p class="ninja-popup-header-title">{{ popup.title }}</p>
+            <div v-loading="fetching" class="fizzy-popup-group">
+                <div v-for="(popup, name) in predefinedTemplates" :key="name" class="fizzy-popup">
+                    <div class="fizzy-popup-inner-item">
+                        <p class="fizzy-popup-header-title">{{ popup.title }}</p>
                         <img :src="popup.image" alt="">
-                        <div class="ninja-popup-inner-text ninja-popup-inner-text-hoverable">
-                            <h3 class="ninja-modal-title">{{ popup.title }}</h3>
+                        <div class="fizzy-popup-inner-text fizzy-popup-inner-text-hoverable">
+                            <h3 class="fizzy-modal-title">{{ popup.title }}</h3>
                             <div>
                                 <el-button :loading="creatingTemplate" type="primary" size="small"
                                     @click="createPopupMeta(name, popup)"
@@ -116,10 +116,10 @@
         left: 160px;
     }
 
-    .ninja-popup {
+    .fizzy-popup {
         &-group {
             overflow: hidden;
-            .ninja-popup {
+            .fizzy-popup {
                 margin-right: 10px;
                 margin-bottom: 30px;
             }
@@ -133,7 +133,7 @@
         transition: border 0.3s;
         overflow: hidden;
 
-        .ninja-popup {
+        .fizzy-popup {
             margin-right: 10px;
         }
 
@@ -160,7 +160,7 @@
         }
 
         &:hover {
-            .ninja-popup-inner-text {
+            .fizzy-popup-inner-text {
                 opacity: 1;
                 visibility: visible;
             }
@@ -186,7 +186,7 @@
                 background-color: rgba(0,0,0,0.6);
             }
 
-            .ninja-modal-title {
+            .fizzy-modal-title {
                 color: #fff;
                 margin: 0 0 10px;
             }

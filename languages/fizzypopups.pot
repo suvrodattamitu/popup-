@@ -1,0 +1,68 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fizzy Popups\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-30 05:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2\n"
+"X-Domain: fizzypopups"
+
+#: app/Route/PopupHandler.php:68
+msgid " Title successfully updated"
+msgstr ""
+
+#: app/Menu.php:113
+msgid "All Collections"
+msgstr ""
+
+#: app/Menu.php:48
+msgid "All Popups"
+msgstr ""
+
+#: app/Route/PopupHandler.php:192
+msgid "Congrats, successfully saved!"
+msgstr ""
+
+#. Name of the plugin
+#: app/Menu.php:35
+msgid "Fizzy Popups"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Fizzy Popups - is the fastest and easiest alternative to add business popup "
+"functionalities on your website."
+msgstr ""
+
+#. Author of the plugin
+msgid "Light Plugins"
+msgstr ""
+
+#: app/Route/PopupHandler.php:101
+msgid "Popup deleted successfully"
+msgstr ""
+
+#: app/Route/PopupHandler.php:125
+msgid "Popup successfully duplicated"
+msgstr ""
+
+#: app/Menu.php:53
+msgid "Support"
+msgstr ""
+
+#: app/Route/PopupHandler.php:158
+msgid "Template Successfully created"
+msgstr ""
+
+#: app/Route/PopupHandler.php:164
+msgid "The selected template couldn't be found."
+msgstr ""

@@ -5,7 +5,7 @@
 @import './components/support_and_docs';
 @import '../common/globals';
 
-.toplevel_page_ninjapopups{
+.toplevel_page_fizzypopups{
     #wpwrap{
         > #wpcontent{
             padding-left: 0;
@@ -19,7 +19,7 @@
 }
 
 //navbar
-.ninja_popup_main_nav{
+.fizzy_popup_main_nav{
   border:1px solid #ccc;
   padding: 0 20px;
   font-weight: 700;
@@ -47,7 +47,7 @@
   }
 }
 
-.ninja_content_wrap {
+.fizzy_content_wrap {
   padding-right: 15px;
   padding-left: 15px;
 }

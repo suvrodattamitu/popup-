@@ -40,9 +40,9 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     if(to.meta){
-        document.title = 'Ninja Popup :: ' + to.meta.title;
+        document.title = 'Fizzy Popup :: ' + to.meta.title;
     }else{
-        document.title = 'Ninja Popup';
+        document.title = 'Fizzy Popup';
     }
 
     next();

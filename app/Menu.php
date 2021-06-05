@@ -1,7 +1,7 @@
 <?php
 
-namespace NinjaPopups;
-use NinjaPopups\Views\View;
+namespace FizzyPopups;
+use FizzyPopups\Views\View;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -32,27 +32,27 @@ class Menu
             return;
         }
 
-        $title = __('Ninja Popups', 'ninjapopups');
+        $title = __('Fizzy Popups', 'fizzypopups');
 
         global $submenu;
         add_menu_page(
             $title,
             $title,
             'manage_options',
-            'ninjapopups',
+            'fizzypopups',
             array($this, 'render'),
             $this->getIcon(),
             25
         );
-        $submenu['ninjapopups']['allpopups'] = array(
-            __('All Popups', 'ninjapopups'),
+        $submenu['fizzypopups']['allpopups'] = array(
+            __('All Popups', 'fizzypopups'),
             'manage_options',
-            'admin.php?page=ninjapopups#/',
+            'admin.php?page=fizzypopups#/',
         );
-        $submenu['ninjapopups']['support'] = array(
-            __('Support', 'ninjapopups'),
+        $submenu['fizzypopups']['support'] = array(
+            __('Support', 'fizzypopups'),
             'manage_options',
-            'admin.php?page=ninjapopups#/support',
+            'admin.php?page=fizzypopups#/support',
         );
     }
 
@@ -65,7 +65,7 @@ class Menu
      **/
     public function render()
     {
-        do_action('ninjapopups/render_admin_app');
+        do_action('fizzypopups/render_admin_app');
     }
 
     /**
@@ -96,27 +96,27 @@ class Menu
      **/
     public function enqueueAssets()
     {
-        if (isset($_GET['page']) && $_GET['page'] == 'ninjapopups') {
+        if (isset($_GET['page']) && $_GET['page'] == 'fizzypopups') {
 
-            wp_enqueue_style('ninjapopups_admin_app', NINJAPOPUPS_URL . 'public/css/ninjapopups-admin.css', array(), NINJAPOPUPS_VERSION);
-            wp_enqueue_style('ninjapopups_app', NINJAPOPUPS_URL . 'public/css/popup.css', array(), NINJAPOPUPS_VERSION);
+            wp_enqueue_style('fizzypopups_admin_app', FIZZYPOPUPS_URL . 'public/css/fizzypopups-admin.css', array(), FIZZYPOPUPS_VERSION);
+            wp_enqueue_style('fizzypopups_app', FIZZYPOPUPS_URL . 'public/css/popup.css', array(), FIZZYPOPUPS_VERSION);
 
-            wp_enqueue_script('ninjapopups_boot', NINJAPOPUPS_URL . 'public/js/ninjapopups-boot.js', array('jquery'), NINJAPOPUPS_VERSION, true);
+            wp_enqueue_script('fizzypopups_boot', FIZZYPOPUPS_URL . 'public/js/fizzypopups-boot.js', array('jquery'), FIZZYPOPUPS_VERSION, true);
 
-            wp_enqueue_script('ninjapopups_admin_app', NINJAPOPUPS_URL . 'public/js/ninjapopups-admin.js', array('ninjapopups_boot'), NINJAPOPUPS_VERSION, true);
+            wp_enqueue_script('fizzypopups_admin_app', FIZZYPOPUPS_URL . 'public/js/fizzypopups-admin.js', array('fizzypopups_boot'), FIZZYPOPUPS_VERSION, true);
 
             wp_enqueue_editor();
             wp_enqueue_media();
 
-            $ninjapopupsAdminVars = apply_filters('ninjapopups/admin_app_vars', array(
+            $fizzypopupsAdminVars = apply_filters('fizzypopups/admin_app_vars', array(
                 'i18n' => array(
-                    'All Collections' => __('All Collections', 'ninjapopups')
+                    'All Collections' => __('All Collections', 'fizzypopups')
                 ),
-                'assets_url' => NINJAPOPUPS_URL . 'public',
+                'assets_url' => FIZZYPOPUPS_URL . 'public',
                 'ajaxurl' => admin_url('admin-ajax.php'),
             ));
 
-            wp_localize_script('ninjapopups_boot', 'NinjaPopupsAdmin', $ninjapopupsAdminVars);
+            wp_localize_script('fizzypopups_boot', 'FizzyPopupsAdmin', $fizzypopupsAdminVars);
         }
     }
 }

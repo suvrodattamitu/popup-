@@ -1,22 +1,25 @@
 (function() {
     //show timer after 3 seconds
-    function showNinjaPopups() {
-        var modal = document.getElementById("ninja-popup-modal-light");
+    function showFizzyPopups() {
+        var modal = document.getElementById("fizzy-popup-modal-light");
         modal.style.display = "block";
     }
-    setTimeout(showNinjaPopups, 3000);
+    setTimeout(showFizzyPopups, 3000);
 
     //close popup on outside click
-    document.getElementById('ninja-popup-modal-light').onclick = function(event){
-        let modal = document.getElementById("ninja-popup-modal-light");
+    document.getElementById('fizzy-popup-modal-light').onclick = function(event){
+        let modal = document.getElementById("fizzy-popup-modal-light");
         if (event.target == modal) {
             modal.remove();
         }
     }
 
     //close popup on button click
-    document.getElementById('close_ninja_popup').onclick = function(){
-        var modal = document.getElementById("ninja-popup-modal-light");
-        modal.remove();
-    };
+    let button = document.getElementById('close_fizzy_popup');
+    if( button ) {
+        button.onclick = function(){
+            var modal = document.getElementById("fizzy-popup-modal-light");
+            modal.remove();
+        };
+    }
 })();

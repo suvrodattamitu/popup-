@@ -1,7 +1,7 @@
 <?php
 
-namespace NinjaPopups\Route;
-use NinjaPopups\Model\Popup;
+namespace FizzyPopups\Route;
+use FizzyPopups\Model\Popup;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -18,7 +18,7 @@ class PopupHandler
      **/
     public function registerEndpoints()
     {
-        add_action('wp_ajax_ninja_popup_admin_ajax', array($this, 'handeEndPoint'));
+        add_action('wp_ajax_fizzy_popup_admin_ajax', array($this, 'handeEndPoint'));
     }
 
     /**
@@ -65,7 +65,7 @@ class PopupHandler
         );
         wp_update_post($data);
         wp_send_json_success(array(
-            'message' => __(' Title successfully updated', 'ninjapopups')
+            'message' => __(' Title successfully updated', 'fizzypopups')
         ), 200);
     }
 
@@ -76,7 +76,7 @@ class PopupHandler
         $searchString = sanitize_text_field($_REQUEST['search_string']);
         $OFFSET = ($pageNumber-1)*$perPage;
 
-        $postType = 'ninja_popup';
+        $postType = 'fizzy_popup';
         $postStatus = 'publish';
 
         global $wpdb;
@@ -95,10 +95,10 @@ class PopupHandler
     {
         $popupId = intval($_REQUEST['popup_id']);
         wp_delete_post($popupId, true);
-        delete_post_meta($popupId, '_ninja_popup_configs', true);
-        delete_post_meta($popupId, '_ninja_popup_html', true);
+        delete_post_meta($popupId, '_fizzy_popup_configs', true);
+        delete_post_meta($popupId, '_fizzy_popup_html', true);
         wp_send_json_success([
-            'message' => __('Popup deleted successfully', 'ninjapopups'),
+            'message' => __('Popup deleted successfully', 'fizzypopups'),
         ], 200);
     }
 
@@ -110,47 +110,39 @@ class PopupHandler
         $newPopupId = wp_insert_post([
             'post_title'    => '(Duplicate) ' .$oldPopup['post_title'],
             'post_content'  => $oldPopup['post_content'],
-            'post_type'     => 'ninja_popup',
+            'post_type'     => 'fizzy_popup',
             'post_status'   => 'publish',
             'post_author'   => get_current_user_id()
         ]);
 
-        $oldPopupMeta = get_post_meta($oldPopupId, '_ninja_popup_configs', true);
+        $oldPopupMeta = get_post_meta($oldPopupId, '_fizzy_popup_configs', true);
 
         if ($oldPopupMeta) {
-            update_post_meta($newPopupId, '_ninja_popup_configs', $oldPopupMeta);
+            update_post_meta($newPopupId, '_fizzy_popup_configs', $oldPopupMeta);
         }
 
         wp_send_json_success([
-            'message' => __('Popup successfully duplicated', 'ninjapopups'),
+            'message' => __('Popup successfully duplicated', 'fizzypopups'),
             'popup_id' => $newPopupId
         ], 200);
     }
 
     public function createPopupMeta()
     {
-        $predefined = $_REQUEST['type'];
-
+        $predefined = sanitize_text_field($_REQUEST['type']);
         $popups = (new Popup())->predefinedPopups();
 
         if ( isset($popups[$predefined]) ) {
-
             $predefinedTemplate = $popups[$predefined];
-
-            //$predefinedTemplateMeta = json_decode($predefinedTemplate['json'], true);
-
-            //create new post and meta
             $templateData = array(
                 'post_title' => $predefinedTemplate['title'],
                 'post_content' => $predefinedTemplate['layout_type'],
-                'post_type' => 'ninja_popup',
+                'post_type' => 'fizzy_popup',
                 'post_status' => 'publish'
             );
 
             $templateId = wp_insert_post($templateData);
-
-            update_post_meta($templateId, '_ninja_popup_configs', $predefinedTemplate );
-
+            update_post_meta($templateId, '_fizzy_popup_configs', $predefinedTemplate );
             wp_update_post([
                 'ID' => $templateId,
                 'post_title' => $predefinedTemplate['title'] . ' (#' . $templateId . ')'
@@ -163,13 +155,13 @@ class PopupHandler
             }
 
             wp_send_json_success(array(
-                'message' => __('Template Successfully created', 'ninjapopups'),
+                'message' => __('Template Successfully created', 'fizzypopups'),
                 'template_id' => $templateId
             ), 200);
         }
 
         wp_send_json_error([
-            'message' => __("The selected template couldn't be found.", 'ninjapopups')
+            'message' => __("The selected template couldn't be found.", 'fizzypopups')
         ], 423);
     }
 
@@ -177,10 +169,7 @@ class PopupHandler
     {
         $popupId = intval($_REQUEST['popup_id']);
         $popupDetails = get_post($popupId);
-        $popupMeta    = get_post_meta($popupId, '_ninja_popup_configs', true);
-
-        $popupMeta = (new Popup())->predefinedPopups();
-        $popupMeta = $popupMeta['christmas_sale'];
+        $popupMeta    = get_post_meta($popupId, '_fizzy_popup_configs', true);
 
         wp_send_json_success([
             'message' => 'success',
@@ -193,14 +182,14 @@ class PopupHandler
     public function updatePopupMeta() 
     {
         $popupId = intval($_REQUEST['popup_id']);
-        $popupMeta = wp_unslash($_REQUEST['popup_meta']);
+        $popupMeta = wp_unslash(sanitize_text_field($_REQUEST['popup_meta']));
         $popupMeta = json_decode($popupMeta, true);
-        update_post_meta($popupId, '_ninja_popup_configs', $popupMeta);
+        update_post_meta($popupId, '_fizzy_popup_configs', $popupMeta);
 
-        do_action('ninja_popup_meta_updated', $popupId, $popupMeta);
+        do_action('fizzy_popup_meta_updated', $popupId, $popupMeta);
 
         wp_send_json_success([
-            'message'   => __('Congrats, successfully saved!', 'ninjapopups'),
+            'message'   => __('Congrats, successfully saved!', 'fizzypopups'),
         ], 200);
     }
 
@@ -221,7 +210,7 @@ class PopupHandler
     }
 
     public static function deleteCache($popupId) {
-        delete_post_meta($popupId, '_ninja_popup_html', false);
-        delete_post_meta($popupId, '_ninja_popup_css', false);
+        delete_post_meta($popupId, '_fizzy_popup_html', false);
+        delete_post_meta($popupId, '_fizzy_popup_css', false);
     }
 }

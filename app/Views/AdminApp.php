@@ -1,7 +1,7 @@
 <?php
 
-namespace NinjaPopups\Views;
-use NinjaPopups\Views\View;
+namespace FizzyPopups\Views;
+use FizzyPopups\Views\View;
 
 if (!defined('ABSPATH')) {
     exit;

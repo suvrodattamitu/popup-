@@ -1,8 +1,8 @@
-.ninja-separator-container {
+.fizzy-separator-container {
     padding: <?php echo esc_html($element['margin']);?>px 0px;
 }
 
-.ninja-separator-component::before {
+.fizzy-separator-component::before {
     display: block;
     border-top-width: 3px;
     border-top-style: solid;

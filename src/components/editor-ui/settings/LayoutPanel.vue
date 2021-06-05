@@ -2,8 +2,8 @@
     <div>
         <!-- <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">WIDTH</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">WIDTH</label>
                     <el-input type="number" v-model="layout_configs.width" size="mini"></el-input>
                 </div>
             </el-col>
@@ -11,8 +11,8 @@
 
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">CORNERS</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">CORNERS</label>
                     <el-select v-model="layout_configs.corners" clearable placeholder="Select" size="mini">
                         <el-option
                         v-for="item in corners"
@@ -27,8 +27,8 @@
 
         <el-row>
             <el-col :span="24">
-                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">BACKGROUND IMAGE</label>
+                 <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">BACKGROUND IMAGE</label>
                     <photo-widget
                         btn_type="primary"
                         :btn_text="'Select File'"
@@ -42,8 +42,8 @@
 
         <!-- <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">IMAGE OVERLAY COLOR</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">IMAGE OVERLAY COLOR</label>
                     <div class="color-picker">
                         <el-color-picker
                             size="mini" 
@@ -57,8 +57,8 @@
 
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">BACKGROUND COLOR</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">BACKGROUND COLOR</label>
                     <div class="color-picker">
                         <el-color-picker
                             size="mini" 
@@ -72,8 +72,8 @@
 
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">DISPLAY CLOSE BUTTON</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">DISPLAY CLOSE BUTTON</label>
                     <el-switch
                     v-model="layout_configs.display_close_button"
                     active-value="true"
@@ -86,8 +86,8 @@
 
         <el-row>
             <el-col :span="24" v-if="layout_configs.display_close_button === 'true'">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">CLOSE BUTTON COLOR</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">CLOSE BUTTON COLOR</label>
                     <div class="color-picker">
                         <el-color-picker
                             size="mini" 

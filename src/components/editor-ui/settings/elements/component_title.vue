@@ -2,16 +2,16 @@
     <div>
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">TITLE</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">TITLE</label>
                     <el-input v-model="configs.value" size="mini"></el-input>
                 </div>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">COLOR</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">COLOR</label>
                     <div class="color-picker">
                         <el-color-picker
                             size="mini" 
@@ -24,16 +24,16 @@
         </el-row>
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">FONT SIZE, (in px)</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">FONT SIZE, (in px)</label>
                     <el-slider v-model="configs.text_size" :min="10" :max="100"></el-slider>
                 </div>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">FONT WEIGHT</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">FONT WEIGHT</label>
                     <el-select v-model="configs.text_weight" clearable placeholder="Select" size="mini">
                         <el-option
                         v-for="item in font_sizes"

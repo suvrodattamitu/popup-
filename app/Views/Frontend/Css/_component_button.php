@@ -1,9 +1,9 @@
-.ninja-popup-button-container{
+.fizzy-popup-button-container{
     display: flex;
     justify-content: center;
 }
 
-.ninja-popup-button-container .ninja-button-component{
+.fizzy-popup-button-container .fizzy-button-component{
     display: inline-flex;
     overflow: hidden;
     box-sizing: border-box;

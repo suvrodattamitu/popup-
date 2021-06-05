@@ -2,8 +2,8 @@
     <div>
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">POSITION</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">POSITION</label>
                     <el-select v-model="configs.position" clearable placeholder="Select" size="mini">
                         <el-option
                         v-for="item in banner_positions"
@@ -18,8 +18,8 @@
 
         <el-row>
             <el-col :span="24">
-                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">BANNER IMAGE</label>
+                 <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">BANNER IMAGE</label>
                     <photo-widget
                         btn_type="primary"
                         :btn_text="'Select File'"

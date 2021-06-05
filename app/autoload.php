@@ -2,14 +2,14 @@
 /**
  * Autoloader
  *
- * @package NinjaPopups
+ * @package FizzyPopups
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!function_exists('NinjaPopupsAutoload')) {
+if (!function_exists('FizzyPopupsAutoload')) {
     /**
      * Plugin autoloader.
      *
@@ -17,9 +17,9 @@ if (!function_exists('NinjaPopupsAutoload')) {
      * @since 1.0.0
      *
      */
-    function NinjaPopupsAutoload($class)
+    function FizzyPopupsAutoload($class)
     {
-        $namespace = 'NinjaPopups';
+        $namespace = 'FizzyPopups';
         if (strpos($class, $namespace) !== 0) {
             return;
         }
@@ -31,5 +31,5 @@ if (!function_exists('NinjaPopupsAutoload')) {
             require $file;
         }
     }
-    spl_autoload_register('NinjaPopupsAutoload');
+    spl_autoload_register('FizzyPopupsAutoload');
 }

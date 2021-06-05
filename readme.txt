@@ -1,52 +1,42 @@
-=== Lightweight Popup Timer Plugin for Wordpress ===
-Contributors: (this should be a list of wordpress.org userid's)
-Tags: popup, timer, Popup Timer, Ecommerce, Marketing
-Requires at least: 5.0
-Tested up to: 5.7
-Stable tag: 4.3
-Requires PHP: 5.6
+=== Fizzy Popups | Fastest Popups Builder ===
+Contributors: lovelightplugins
+Tags: popups, popup, notifications , dialogue, dialogues, wp popups, popup builder
+Requires at least: 3.4
+Tested up to: 5.7.1
+Stable tag: 1.0.0
 License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
-The easiest and fastest Popup Timer Plugin for WordPress
+Display clean, customizable, and responsive Popups To Your Wordpress Site.
 
 == Description ==
 
-=The easiest and fastest Popup Timer Plugin for WordPress=
+You can customize everything!! You can set the Fizzy Popups the way you thought!!!
 
-**🎉 Customization Options**
+= Why Fizzy Popups ? =
 
-* You can show whatever you want to say your customers.
-* You can change background color, place bottom/top.
-* You can set any time you want.
-* You can put your sell links to the shop button.
-
-= 🚀 Modern. Powerful. Super Fast 🚀 =
-
-* Build with latest technology
-* Lightweight as it does not load unnecessary assets.
-* It does not effects your page loading.(Total assets is less than 10kb)
+* **Fastest**  Fizzy Popups Builder is the Fastest Popups builder.
+* **Simplest** simple to set up
+* **Lightweight** No un-used assets loads. Assets size is just 10kb.
+* **Organized** the plugin is well Organized to set up a new popup.
+* **Live Preview** You can edit and show live preview 
 
 == Frequently Asked Questions ==
 
-= Is this popup timer is customzable? =
-
-Yes you can customize everything you want to customize.
-
-= Does it effects page loading? =
-
-Our plugin is not resource hungry. we make it Lightweight. Just necessary assets will be used(less than 10kb);
+= Is The Fizzy Popups customizable? =
+Yes, You can customize everything of the Fizzy Popups.
+= Is Fizzy Popups allow to design popups? =
+Yes, You can design your popup from editor panel the way you want to show the users.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is stored in the /assets directory.
-2. This is the second screen shot
+1. Completely customizable with live preview editor.
+2. Design : Layout One
+3. Design : Layout Two
+4. Design : Layout Three
+5. Your customized Fizzy Popups in frontend
 
 == Changelog ==
 
-= 1.0.0 (Date: September 29, 2020) =
-* Initial Launch
-* 1482 git commits so far
-* 1982 cup of coffee (Just kidding, We lost count)
-* Work of 1 year + 5 developers
-* Let's make WordPress great!
+= 1.0.0 =
+* Launched the Fizzy Popups!

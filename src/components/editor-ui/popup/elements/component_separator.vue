@@ -1,6 +1,6 @@
 <template>
-    <div class="ninja-separator-container">
-        <div :class="`ninja-separator-component ${configs.selector}`"></div>
+    <div class="fizzy-separator-container">
+        <div :class="`fizzy-separator-component ${configs.selector}`"></div>
     </div>
 </template>
 

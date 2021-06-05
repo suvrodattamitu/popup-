@@ -2,8 +2,8 @@
     <div>
         <el-row>
             <el-col :span="24">
-                <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">SCALE, (in %)</label>
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">SCALE, (in %)</label>
                     <el-slider v-model="configs.scale" :min="10" :max="100"></el-slider>
                 </div>
             </el-col>
@@ -11,8 +11,8 @@
 
         <el-row>
             <el-col :span="24">
-                 <div class="ninja_popup_item">
-                    <label class="ninja_popup_label">IMAGE</label>
+                 <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">IMAGE</label>
                     <photo-widget
                         btn_type="primary"
                         :btn_text="'Select File'"

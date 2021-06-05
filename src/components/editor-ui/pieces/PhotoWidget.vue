@@ -1,11 +1,11 @@
 <template>
-    <div class="ninja-upload-photo-element" v-if="app_ready">
-        <div class="ninja-upload-container">
+    <div class="fizzy-upload-photo-element" v-if="app_ready">
+        <div class="fizzy-upload-container">
             <div class="upload-items">
-                <div class="ninja_popup_photo_holder_element" :class="[modelValue ? 'ninja_upload_photo_container' : '']">
+                <div class="fizzy_popup_photo_holder_element" :class="[modelValue ? 'fizzy_upload_photo_container' : '']">
                     <img v-if="modelValue" :src="modelValue"/>
                 </div>
-                <i class="el-icon-upload ninja-upload-icon"></i>
+                <i class="el-icon-upload fizzy-upload-icon"></i>
                 <p>Browse for a file to upload</p>
                 <el-button size="small" @click="initUploader" :type="btn_type">{{btn_text}}</el-button>
             </div>
@@ -14,21 +14,21 @@
 </template>
 
 <style lang="scss">
-    .ninja-upload-photo-element{
-        .ninja-upload-container{
+    .fizzy-upload-photo-element{
+        .fizzy-upload-container{
             display: flex;
             .upload-items{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                .ninja_upload_photo_container{
+                .fizzy_upload_photo_container{
                     margin-bottom:15px;
                 }
-                .ninja-upload-icon{
+                .fizzy-upload-icon{
                     font-size: 35px;
                 }
-                .ninja_popup_photo_holder_element{
+                .fizzy_popup_photo_holder_element{
                     img{
                         display: block;
                         max-height: 100px;

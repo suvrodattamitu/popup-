@@ -1,6 +1,6 @@
 <template>
-    <div class="ninja-popup-button-container">
-        <div :class="`ninja-button-component ${configs.selector}`">
+    <div class="fizzy-popup-button-container">
+        <div :class="`fizzy-button-component ${configs.selector}`">
             <a href="" target="_blank">
                 {{ configs.text }}
             </a>

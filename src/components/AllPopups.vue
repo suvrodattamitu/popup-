@@ -1,13 +1,13 @@
 <template>
-    <div class="ninja_content_wrap">
-        <div class="ninja_all_popups" v-loading="loading">
+    <div class="fizzy_content_wrap">
+        <div class="fizzy_all_popups" v-loading="loading">
             <el-row>
                 <el-col>
                     <predefinedPopup v-model:visibility="showAddFormModal"></predefinedPopup>
                     <welcome v-if="!allPopups.length" v-model="showAddFormModal"></welcome>
                     <div v-else>
-                        <div class="ninja_popup_table">
-                            <div class="ninja_table_actions">
+                        <div class="fizzy_popup_table">
+                            <div class="fizzy_table_actions">
                                 <div class="nina_search_action">
                                     <el-input type="text" size="medium" v-model="search_string"  @keyup.enter="getallPopups">
                                         <template #suffix>
@@ -15,7 +15,7 @@
                                         </template>
                                     </el-input>
                                 </div>
-                                <div class="ninja_add_new_actions">
+                                <div class="fizzy_add_new_actions">
                                     <el-button size="mini"  @click="showAddFormModal = true" type="primary" icon="el-icon-circle-plus">
                                         Add Popup
                                     </el-button>
@@ -43,7 +43,7 @@
                                 >
                                 <template #default="scope">
                                     <strong>{{ scope.row.post_title }}</strong>
-                                    <div class="row-actions ninja_row_actions">
+                                    <div class="row-actions fizzy_row_actions">
                                         <router-link :to="'/popup-editor/'+scope.row.ID">
                                             Edit
                                         </router-link>
@@ -68,15 +68,15 @@
                                 >
                                 <template #default="scope">
                                     <code class="copy"
-                                        :data-clipboard-text='`[ninja_popup_layout id="${scope.row.ID}" ]`'>
-                                        <i class="el-icon-document"></i> [ninja_popup_layout id="{{ scope.row.ID }}"]
+                                        :data-clipboard-text='`[fizzy_popup_layout id="${scope.row.ID}" ]`'>
+                                        <i class="el-icon-document"></i> [fizzy_popup_layout id="{{ scope.row.ID }}"]
                                     </code>
                                 </template>
                                 </el-table-column>
                             </el-table>
                         </div>
 
-                        <div class="ninja_pagination">
+                        <div class="fizzy_pagination">
                             <el-pagination
                                 background
                                 @size-change="handleSizeChange"
@@ -115,19 +115,19 @@
 </template>
 
 <style lang="scss">
-    .ninja_all_popups{
+    .fizzy_all_popups{
         .el-input__suffix{
             right: 0px !important;
         }
-        .ninja_pagination{
+        .fizzy_pagination{
             float:right;
             margin:15px 0px;
             .el-input__inner{
                 background-color: #fff;
             }
         }
-        .ninja_popup_table{
-            .ninja_table_actions{
+        .fizzy_popup_table{
+            .fizzy_table_actions{
                 display: flex;
                 margin:15px 0px;
                 align-items: center;
@@ -137,7 +137,7 @@
                 }
             }
         }
-        .ninja_row_actions{
+        .fizzy_row_actions{
             a{
                 text-decoration: none;
                 cursor:pointer;
