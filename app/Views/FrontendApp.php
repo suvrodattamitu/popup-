@@ -35,7 +35,7 @@ class FrontendApp
         update_post_meta($popupId, '_fizzy_popup_css', $generatedCss);
 
         add_action('wp_footer', function () use ($generatedCss) {
-            echo "<style id='wp_pricing_css'>". $generatedCss ."</style>";
+            echo "<style id='fizzy_popup_css'>". $generatedCss ."</style>";
         });
 
         wp_enqueue_script('fizzy_popup_manager', FIZZYPOPUPS_URL . 'public/js/popup_manager.js', array('jquery'), FIZZYPOPUPS_VERSION, true);

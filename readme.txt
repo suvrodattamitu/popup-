@@ -2,8 +2,8 @@
 Contributors: lovelightplugins
 Tags: popups, popup, notifications , dialogue, dialogues, wp popups, popup builder
 Requires at least: 3.4
-Tested up to: 5.7.1
-Stable tag: 1.0.0
+Tested up to: 5.7.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -11,7 +11,8 @@ Display clean, customizable, and responsive Popups To Your Wordpress Site.
 
 == Description ==
 
-You can customize everything!! You can set the Fizzy Popups the way you thought!!!
+It is often found very difficult to set up a popup.Most of the time user can't show what they want to show in the popup.For that reason we introduce Fizzy Popups.Using it you can show what you want to show and how you want to show in the popup.
+You can customize everything!! You can Organize your popups however you want imagine. In a Sentence, You can implement your imagination to reality using Fizzy Popups.
 
 = Why Fizzy Popups ? =
 
@@ -38,5 +39,11 @@ Yes, You can design your popup from editor panel the way you want to show the us
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.1.0 (DATE: JUNE 25, 2021) =
+* Added Blank Popup Layout
+* Added Html to each Layout
+* Added Popup Margin Settings
+* Fix Button Url Field
+
+= 1.0.0 (DATE: JUNE 05, 2021)=
 * Launched the Fizzy Popups!

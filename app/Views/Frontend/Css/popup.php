@@ -1,5 +1,6 @@
 
 .fizzy-popup-content-styler{
+    margin: <?php echo esc_html($popup_meta['layout']['margin']); ?>% auto !important; 
     background-color: <?php echo esc_html($popup_meta['layout']['background_color']); ?> !important; 
     <?php if($popup_meta['layout']['corners'] === 'rounded'): ?>
     border-radius: 8px;

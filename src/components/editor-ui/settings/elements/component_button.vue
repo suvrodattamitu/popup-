@@ -8,6 +8,14 @@
                 </div>
             </el-col>
         </el-row>
+         <el-row>
+            <el-col :span="24">
+                <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">BUTTON URL</label>
+                    <el-input v-model="configs.btn_url" size="mini"></el-input>
+                </div>
+            </el-col>
+        </el-row>
         <el-row>
             <el-col :span="24">
                 <div class="fizzy_popup_item">

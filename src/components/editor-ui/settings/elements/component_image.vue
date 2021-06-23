@@ -26,7 +26,7 @@
     </div>
 </template>
 
-<script>
+<script type="text/babel">
 import PhotoWidget from '../../pieces/PhotoWidget';
 
 export default {

@@ -12,6 +12,15 @@
         <el-row>
             <el-col :span="24">
                 <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">MARGIN, (in %)</label>
+                    <el-slider v-model="layout_configs.margin" :min="1" :max="50"></el-slider>
+                </div>
+            </el-col>
+        </el-row>
+
+        <el-row>
+            <el-col :span="24">
+                <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">CORNERS</label>
                     <el-select v-model="layout_configs.corners" clearable placeholder="Select" size="mini">
                         <el-option

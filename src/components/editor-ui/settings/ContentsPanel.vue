@@ -65,6 +65,7 @@ import component_spacing from './elements/component_spacing';
 import component_title from './elements/component_title';
 import component_separator from './elements/component_separator';
 import component_banner from './elements/component_banner';
+import component_html from './elements/component_html';
 import draggable from 'vuedraggable';
 
 export default {
@@ -76,6 +77,7 @@ export default {
         component_title,
         component_separator,
         component_banner,
+        component_html,
         draggable,
     },
     data() {

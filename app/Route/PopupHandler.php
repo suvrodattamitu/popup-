@@ -181,12 +181,31 @@ class PopupHandler
 
     public function updatePopupMeta() 
     {
-        $popupId = intval($_REQUEST['popup_id']);
-        $popupMeta = wp_unslash(sanitize_text_field($_REQUEST['popup_meta']));
-        $popupMeta = json_decode($popupMeta, true);
-        update_post_meta($popupId, '_fizzy_popup_configs', $popupMeta);
 
-        do_action('fizzy_popup_meta_updated', $popupId, $popupMeta);
+        $popupId = intval($_REQUEST['popup_id']);
+        $popupMeta = $_REQUEST['popup_meta'];
+
+        $metaData = sanitize_text_field($popupMeta);
+        $metaData = json_decode(wp_unslash($metaData),true);
+        
+        //for sanitizing html input field
+        $popupMeta = json_decode(wp_unslash($popupMeta),true);
+        $components = $popupMeta['popup_components'];
+        foreach($components as $index=>$component) {
+            $key = sanitize_text_field($component['key']);
+            $componentData = '';
+            if( $key === 'html' ) {
+                $componentData = wp_kses_post($component[$key]);
+                $selector  = sanitize_text_field($component['selector']);
+                $metaData['popup_components'][$index]['key'] = $key;
+                $metaData['popup_components'][$index][$key] = $componentData;
+                $metaData['popup_components'][$index]['selector'] = $selector;
+            } 
+        }
+
+        update_post_meta($popupId, '_fizzy_popup_configs', $metaData);
+
+        do_action('fizzy_popup_meta_updated', $popupId, $metaData);
 
         wp_send_json_success([
             'message'   => __('Congrats, successfully saved!', 'fizzypopups'),
