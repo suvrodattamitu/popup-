@@ -3,6 +3,20 @@
         <el-row>
             <el-col :span="24">
                 <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">DISPLAY</label>
+                    <el-switch
+                    v-model="configs.show"
+                    active-value="true"
+                    inactive-value="false"
+                    active-color="#13ce66">
+                    </el-switch>
+                </div>
+            </el-col>
+        </el-row>
+
+        <el-row v-if="configs.show === 'true'">
+            <el-col :span="24">
+                <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">POSITION</label>
                     <el-select v-model="configs.position" clearable placeholder="Select" size="mini">
                         <el-option
@@ -16,7 +30,7 @@
             </el-col>
         </el-row>
 
-        <el-row>
+        <el-row v-if="configs.show === 'true'">
             <el-col :span="24">
                  <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">BANNER IMAGE</label>

@@ -54,7 +54,7 @@ class FrontendApp
         }
 
         $bannerIndex = array_search('banner', array_column($components, 'key'));
-        $componentWrapperClass = ($bannerIndex !== false && ($components[$bannerIndex]['position'] === 'top' || $components[$bannerIndex]['position'] === 'bottom')) ? 'fizzy-popup-components-wrapper-column' : '';
+        $componentWrapperClass = ($bannerIndex !== false && $components[$bannerIndex]['show'] === 'true' && ($components[$bannerIndex]['position'] === 'top' || $components[$bannerIndex]['position'] === 'bottom')) ? 'fizzy-popup-components-wrapper-column' : '';
         ob_start();
         ?>
         <div class="nfd-container">
@@ -69,7 +69,7 @@ class FrontendApp
                     </div>  
                     <?php endif; ?>
                     <div class="fizzy-popup-components-wrapper <?php echo esc_html($componentWrapperClass); ?>">
-                            <?php if($bannerIndex !== false && ($components[$bannerIndex]['position'] === 'left' || $components[$bannerIndex]['position'] === 'top')): ?>
+                            <?php if($bannerIndex !== false && $components[$bannerIndex]['show'] === 'true' && ($components[$bannerIndex]['position'] === 'left' || $components[$bannerIndex]['position'] === 'top')): ?>
                                 <div class="fizzy-popup-banner-container">
                                     <div class="fizzy-banner-component <?php echo esc_html($components[$bannerIndex]['selector']); ?>" style="background-image:url(<?php echo esc_url($components[$bannerIndex]['image_url']);?>"></div>
                                 </div>
@@ -78,7 +78,7 @@ class FrontendApp
                                 <?php
                                     foreach($components as $index => $component):
                                     $componentKey = $component['key'];
-                                    if( $componentKey === 'banner' ) continue;
+                                    if( $componentKey === 'banner' || $component['show'] === 'false') continue;
                                 ?>
                                     <div class="fizzy-popup-component-container">
                                         <?php echo $this->getPopupComponentHTML($componentKey, $component); ?>
@@ -87,7 +87,7 @@ class FrontendApp
                                     endforeach;
                                 ?>
                             </div>
-                            <?php if($bannerIndex !== false && ($components[$bannerIndex]['position'] === 'right' || $components[$bannerIndex]['position'] === 'bottom')): ?>
+                            <?php if($bannerIndex !== false && $components[$bannerIndex]['show'] === 'true' && ($components[$bannerIndex]['position'] === 'right' || $components[$bannerIndex]['position'] === 'bottom')): ?>
                                 <div class="fizzy-popup-banner-container">
                                     <div class="fizzy-banner-component <?php echo esc_html($components[$bannerIndex]['selector']); ?>" style="background-image:url(<?php echo esc_url($components[$bannerIndex]['image_url']);?>"></div>
                                 </div>
@@ -117,6 +117,7 @@ class FrontendApp
         }
 
         foreach( $popupConfigs['popup_components'] as $component) {
+            if( $component['show'] === 'false' ) continue;
             $componentKey = $component['key'];
             $componentName = '_component_'.$componentKey;
             $generatedCss .= View::make('Frontend.Css.'.$componentName, [

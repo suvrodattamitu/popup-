@@ -68,13 +68,7 @@
             <el-col :span="24">
                 <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">BACKGROUND COLOR</label>
-                    <div class="color-picker">
-                        <el-color-picker
-                            size="mini" 
-                            v-model="layout_configs.background_color" 
-                            show-alpha>
-                        </el-color-picker>
-                    </div>
+                    <color-picker v-model="layout_configs.background_color"></color-picker>
                 </div>
             </el-col>
         </el-row>
@@ -97,13 +91,7 @@
             <el-col :span="24" v-if="layout_configs.display_close_button === 'true'">
                 <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">CLOSE BUTTON COLOR</label>
-                    <div class="color-picker">
-                        <el-color-picker
-                            size="mini" 
-                            v-model="layout_configs.close_button_color" 
-                            show-alpha>
-                        </el-color-picker>
-                    </div>
+                    <color-picker v-model="layout_configs.close_button_color"></color-picker>
                 </div>
             </el-col>
         </el-row>
@@ -112,11 +100,13 @@
 
 <script>
 import PhotoWidget from '../pieces/PhotoWidget';
+import ColorPicker from '../pieces/ColorPicker.vue';
 
 export default {
     props:['layout_configs'],
     components: {
-        PhotoWidget
+        PhotoWidget,
+        ColorPicker
     },
     data() {
         return {

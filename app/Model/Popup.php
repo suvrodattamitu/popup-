@@ -23,17 +23,20 @@ class Popup
                 'popup_components' => array(
                     array(
                         'key' => 'spacing',
+                        'show' => 'true',
                         'selector'  => 'fizzy-popup-spacing1',
                         'size' => 20,
                     ),
                     array(
                         'key' => 'image',
+                        'show' => 'true',
                         'selector'  => 'fizzy-popup-image1',
                         'image_url' => $asset_url.'/images/popups/gift-box.png',
                         'scale' => 25,
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => 'BEST CHRISTMAS GIFTS',
                         'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#fff',
@@ -42,6 +45,7 @@ class Popup
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => '50% Off For All',
                         'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#fff',
@@ -50,6 +54,7 @@ class Popup
                     ),
                     array(
                         'key' => 'button',
+                        'show' => 'true',
                         'btn_url' => 'https://www.google.com',
                         'text' => 'START SHOPPING',
                         'selector'  => 'fizzy-popup-button1',
@@ -60,12 +65,13 @@ class Popup
                     ),
                     array(
                         'key' => 'html',
+                        'show' => 'true',
                         'selector'  => '.fizzy-popup-html1',
                         'html' => '',
                     )
                 ),
                 'layout' => array(
-                    'margin' => 5,
+                    'margin' => 15,
                     'width' => 600,
                     'corners' => 'square',
                     'background_image_url'  => $asset_url.'/images/popups/christmas-sale.png',
@@ -86,6 +92,7 @@ class Popup
                 'popup_components' => array(
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => '2 DAYS ONLY',
                         'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#000',
@@ -94,6 +101,7 @@ class Popup
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => 'Get exclusive 70% discount',
                         'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#000',
@@ -102,12 +110,14 @@ class Popup
                     ),
                     array(
                         'key' => 'separator',
+                        'show' => 'true',
                         'selector'  => 'fizzy-popup-separator1',
                         'margin' => 4,
                         'color' => '#000'
                     ),
                     array(
                         'key' => 'button',
+                        'show' => 'true',
                         'btn_url' => 'https://www.google.com',
                         'text' => 'Yes, I want 70%!!',
                         'selector'  => 'fizzy-popup-button1',
@@ -118,18 +128,20 @@ class Popup
                     ),
                     array(
                         'key' => 'banner',
+                        'show' => 'true',
                         'selector'  => 'fizzy-popup-banner1',
                         'image_url' => $asset_url.'/images/popups/sale-offer.png',
                         'position' => 'right',
                     ),
                     array(
                         'key' => 'html',
+                        'show' => 'true',
                         'selector'  => '.fizzy-popup-html1',
                         'html' => '',
                     )
                 ),
                 'layout' => array(
-                    'margin' => 5,
+                    'margin' => 15,
                     'width' => 600,
                     'corners' => 'rounded',
                     'background_image_url'  => '',
@@ -150,12 +162,14 @@ class Popup
                 'popup_components' => array(
                     array(
                         'key' => 'image',
+                        'show' => 'true',
                         'selector'  => 'fizzy-popup-image1',
                         'image_url' => $asset_url.'/images/popups/super-sale.png',
-                        'scale' => 20,
+                        'scale' => 50,
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => 'A special discount for you',
                         'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#000',
@@ -164,6 +178,7 @@ class Popup
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => '50% off on all of our products ',
                         'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#000',
@@ -172,6 +187,7 @@ class Popup
                     ),
                     array(
                         'key' => 'button',
+                        'show' => 'true',
                         'btn_url' => 'https://www.google.com',
                         'text' => 'START SHOPPING',
                         'selector'  => 'fizzy-popup-button1',
@@ -182,12 +198,13 @@ class Popup
                     ),
                     array(
                         'key' => 'html',
+                        'show' => 'true',
                         'selector'  => '.fizzy-popup-html1',
                         'html' => '',
                     )
                 ),
                 'layout' => array(
-                    'margin' => 5,
+                    'margin' => 15,
                     'width' => 600,
                     'corners' => 'square',
                     'background_image_url'  => '',
@@ -203,22 +220,25 @@ class Popup
 
             'blank_popup' => array(
                 'title' => 'Blank Popup',
-                'image'      => $asset_url.'/images/popups/layout-three.png',
+                'image'      => $asset_url.'/images/popups/layout-four.png',
                 'layout_type'   => 'Blank Popup',
                 'popup_components' => array(
                     array(
                         'key' => 'html',
+                        'show' => 'true',
                         'selector'  => '.fizzy-popup-html1',
                         'html' => '',
                     ),
                     array(
                         'key' => 'image',
+                        'show' => 'true',
                         'selector'  => 'fizzy-popup-image1',
                         'image_url' => '',
                         'scale' => 20,
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => '',
                         'selector'  => 'fizzy-popup-title1',
                         'text_color' => '#000',
@@ -227,6 +247,7 @@ class Popup
                     ),
                     array(
                         'key' => 'title',
+                        'show' => 'true',
                         'value' => '',
                         'selector'  => 'fizzy-popup-title2',
                         'text_color' => '#000',
@@ -235,6 +256,7 @@ class Popup
                     ),
                     array(
                         'key' => 'button',
+                        'show' => 'true',
                         'btn_url' => '',
                         'text' => '',
                         'selector'  => 'fizzy-popup-button1',
@@ -245,7 +267,7 @@ class Popup
                     )
                 ),
                 'layout' => array(
-                    'margin' => 5,
+                    'margin' => 15,
                     'width' => 600,
                     'corners' => 'square',
                     'background_image_url'  => '',

@@ -17,10 +17,10 @@ You can customize everything!! You can Organize your popups however you want ima
 = Why Fizzy Popups ? =
 
 * **Fastest**  Fizzy Popups Builder is the Fastest Popups builder.
-* **Simplest** simple to set up
+* **Simplest** Simple to set up.
 * **Lightweight** No un-used assets loads. Assets size is just 10kb.
-* **Organized** the plugin is well Organized to set up a new popup.
-* **Live Preview** You can edit and show live preview 
+* **Organized** The plugin is well Organized to set up a new popup.
+* **Live Preview** You can edit and show live preview.
 
 == Frequently Asked Questions ==
 
@@ -40,10 +40,13 @@ Yes, You can design your popup from editor panel the way you want to show the us
 == Changelog ==
 
 = 1.1.0 (DATE: JUNE 25, 2021) =
+
 * Added Blank Popup Layout
 * Added Html to each Layout
 * Added Popup Margin Settings
 * Fix Button Url Field
+* Show/Hide any specific component
 
 = 1.0.0 (DATE: JUNE 05, 2021)=
+
 * Launched the Fizzy Popups!

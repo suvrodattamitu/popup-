@@ -3,26 +3,33 @@
         <el-row>
             <el-col :span="24">
                 <div class="fizzy_popup_item">
+                    <label class="fizzy_popup_label">DISPLAY</label>
+                    <el-switch
+                    v-model="configs.show"
+                    active-value="true"
+                    inactive-value="false"
+                    active-color="#13ce66">
+                    </el-switch>
+                </div>
+            </el-col>
+        </el-row>
+        <el-row v-if="configs.show === 'true'">
+            <el-col :span="24">
+                <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">TITLE</label>
                     <el-input v-model="configs.value" size="mini"></el-input>
                 </div>
             </el-col>
         </el-row>
-        <el-row>
+        <el-row v-if="configs.show === 'true'">
             <el-col :span="24">
                 <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">COLOR</label>
-                    <div class="color-picker">
-                        <el-color-picker
-                            size="mini" 
-                            v-model="configs.text_color" 
-                            show-alpha>
-                        </el-color-picker>
-                    </div>
+                    <color-picker v-model="configs.text_color"></color-picker>
                 </div>
             </el-col>
         </el-row>
-        <el-row>
+        <el-row v-if="configs.show === 'true'">
             <el-col :span="24">
                 <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">FONT SIZE, (in px)</label>
@@ -30,7 +37,7 @@
                 </div>
             </el-col>
         </el-row>
-        <el-row>
+        <el-row v-if="configs.show === 'true'">
             <el-col :span="24">
                 <div class="fizzy_popup_item">
                     <label class="fizzy_popup_label">FONT WEIGHT</label>
@@ -49,6 +56,8 @@
 </template>
 
 <script>
+import ColorPicker from '../../pieces/ColorPicker.vue';
+
 export default {
     props:['configs'],
     data() {
@@ -61,6 +70,9 @@ export default {
                 label: 'Bold'
             }],
         }
+    },
+    components: {
+        ColorPicker
     }
 }
 </script>

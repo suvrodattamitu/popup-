@@ -72,24 +72,6 @@
             display: flex;
             margin-top: 10px;
 
-            // .fizzy-popup-banner-container{
-            //     flex-basis: 0px;
-            //     flex-grow: 1;
-            //     min-width: 0px;
-            //     position: relative;
-
-            //     .fizzy-banner-component{
-            //         position: absolute;
-            //         top: 0;
-            //         right: 0;
-            //         bottom: 0;
-            //         left: 0;
-            //         background-repeat: no-repeat;
-            //         background-size: cover;
-            //         background-position: center;
-            //     }
-            // }
-
             .fizzy-popup-components-container {
                 flex-basis: 0px;
                 flex-grow: 1;
@@ -108,27 +90,6 @@
                     justify-content: center;
                 }
             }
-
-            // .fizzy-popup-button-container{
-            //     display: flex;
-            //     justify-content: center;
-            //     .fizzy-button-component{
-            //         display: inline-flex;
-            //         overflow: hidden;
-            //         box-sizing: border-box;
-            //         justify-content: center;
-            //         align-items: center;
-            //         padding: 0 12px;
-            //         outline: none;
-            //         white-space: nowrap;
-            //         text-overflow: ellipsis;
-            //         font-weight: 700;
-            //         line-height: 1;
-            //         transition-property: border-color, background-color, color;
-            //         transition-duration: 0.2s;
-            //         transition-timing-function: ease;
-            //     }
-            // }
         }
     }
 }

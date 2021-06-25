@@ -18,6 +18,11 @@
     transition-property: border-color, background-color, color;
     transition-duration: 0.2s;
     transition-timing-function: ease;
+    cursor:pointer;
+}
+
+.fizzy-button-component a{
+    text-decoration: none !important;
 }
 
 .<?php echo $prefix; ?> .<?php echo $element['selector']; ?>{
