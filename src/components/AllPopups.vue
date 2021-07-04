@@ -8,17 +8,34 @@
                     <div v-else>
                         <div class="fizzy_popup_table">
                             <div class="fizzy_table_actions">
-                                <div class="nina_search_action">
-                                    <el-input type="text" size="medium" v-model="search_string"  @keyup.enter="getallPopups">
-                                        <template #suffix>
-                                            <el-button  size="medium" icon="el-icon-search" @click="getallPopups"></el-button>
-                                        </template>
-                                    </el-input>
+                                <div class="left_actions">
+                                    <div class="ninja_bulk_action">
+                                        <el-select v-model="bulk_value" clearable placeholder="Select" size="mini">
+                                            <el-option
+                                            v-for="item in bulkOptions"
+                                            :key="item.value"
+                                            :label="item.label"
+                                            :value="item.value">
+                                            </el-option>
+                                        </el-select>
+                                        <el-button class="ninja_bulk_button" size="mini"  @click="openBulkModal" type="primary">
+                                            Apply
+                                        </el-button>
+                                    </div>
                                 </div>
-                                <div class="fizzy_add_new_actions">
-                                    <el-button size="mini"  @click="showAddFormModal = true" type="primary" icon="el-icon-circle-plus">
-                                        Add Popup
-                                    </el-button>
+                                <div class="right_actions">
+                                    <div class="nina_search_action">
+                                        <el-input type="text" size="medium" v-model="search_string"  @keyup.enter="getallPopups">
+                                            <template #suffix>
+                                                <el-button  size="medium" icon="el-icon-search" @click="getallPopups"></el-button>
+                                            </template>
+                                        </el-input>
+                                    </div>
+                                    <div class="ninja_add_new_action">
+                                        <el-button size="medium"  @click="showAddFormModal = true" type="primary" icon="el-icon-circle-plus">
+                                            Add Popup
+                                        </el-button>
+                                    </div>
                                 </div>
                             </div>
                             <el-table
@@ -110,6 +127,23 @@
                     </span>
                 </template>
             </el-dialog>
+
+            <!--Bulk form Confimation Modal-->
+            <el-dialog
+                    :title="`Are You Sure, You want to ${bulk_value} this Popup?`"
+                    v-model="showBulkModal"
+                    :before-close="handleBulkClose"
+                    width="60%">
+                <div class="modal_body">
+                    <p>All the data assoscilate with this popup will {{bulk_value}}</p>
+                </div>
+                <template #footer>
+                    <span class="dialog-footer">
+                        <el-button @click="showBulkModal = false">Cancel</el-button>
+                        <el-button type="primary" @click="bulkActionNow()">Confirm</el-button>
+                    </span>
+                </template>
+            </el-dialog>
         </div>
     </div>
 </template>
@@ -119,7 +153,7 @@
         .el-input__suffix{
             right: 0px !important;
         }
-        .fizzy_pagination{
+        .fizzy_pagination, .ninja_bulk_action{
             float:right;
             margin:15px 0px;
             .el-input__inner{
@@ -132,8 +166,15 @@
                 margin:15px 0px;
                 align-items: center;
                 justify-content: space-between;
-                .nina_search_action{
+
+                .ninja_bulk_button{
+                    margin-left:5px;
+                }
+                .right_actions{
                     display:flex;
+                    .ninja_add_new_action {
+                        margin-left:15px;
+                    }
                 }
             }
         }
@@ -152,6 +193,7 @@
 <script type="text/babel">
     import predefinedPopup from '../components/modals/predefinedPopup.vue';
     import Welcome from './editor-ui/pieces/Welcome.vue';
+    import Clipboard from 'clipboard';
 
     export default {
         components:{
@@ -160,6 +202,15 @@
         },
         data() {
             return {
+                showBulkModal: false,
+                bulk_value: '',
+                bulkOptions: [{
+                    value: '',
+                    label: 'Bulk actions'
+                },{
+                    value: 'delete',
+                    label: 'Delete'
+                }],
                 showAddFormModal: false,
                 loading: false,
                 allPopups: [],
@@ -175,6 +226,11 @@
             }
         },
         methods: {
+            openBulkModal() {
+                if(this.multipleSelection.length) {
+                    this.showBulkModal = true;
+                }
+            },
             //multiple select
             handleSelectionChange(val) {
                 this.multipleSelection = val;
@@ -235,9 +291,41 @@
                         this.loading = false;
                     });
             },
+            bulkActionNow() {
+                if( this.bulk_value && this.multipleSelection.length ) {
+                    this.loading = true;
+                    this.$adminPost({
+                        route: 'bulk_action',
+                        bulk_value: this.bulk_value,
+                        popup_ids: JSON.stringify(this.multipleSelection)
+                    })
+                        .then(response => {
+                            if( response.data ) {
+                                this.$message({
+                                    showClose: true,
+                                    message: response.data.message,
+                                    type: 'success'
+                                });
+                                this.getallPopups();
+                            }
+                        }).fail(error => {
+
+                        }).always(() => {
+                            this.showBulkModal = false;
+                            this.multipleSelection = [];
+                            this.bulk_value = '';
+                            this.loading = false;
+                        });
+                }
+            },
             handleDeleteClose(){
                 this.deleteDialogVisible = false;
                 this.deletingPopup = {}
+            },
+            handleBulkClose() {
+                this.showBulkModal = false;
+                this.multipleSelection = [];
+                this.bulk_value = '';
             },
             duplicatePopup(popup){
                 
@@ -261,10 +349,24 @@
                     }).always(() => {
                         this.loading = false;
                     });
+            },
+            clipboard(){
+                if( !window.clipboard ){
+                    window.clipboard = new Clipboard('.copy');
+                        window.clipboard.on('success', (e) => {
+                        let message = 'Shortcode is Copied!'
+                        this.$message({
+                            showClose: true,
+                            message: message,
+                            type: 'success'
+                        });
+                    });
+                }
             }
         },
         mounted(){
-            this.getallPopups()
+            this.getallPopups();
+            this.clipboard();
         }
     }
 </script>

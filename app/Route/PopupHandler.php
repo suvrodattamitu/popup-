@@ -47,6 +47,7 @@ class PopupHandler
             //all popups
             'get_all_popups' => 'getallPopups',
             'delete_popup'   => 'deletePopup',
+            'bulk_action'   => 'bulkAction',
             'duplicate_popup'=> 'duplicatePopup',
         );
 
@@ -99,6 +100,26 @@ class PopupHandler
         delete_post_meta($popupId, '_fizzy_popup_html', true);
         wp_send_json_success([
             'message' => __('Popup deleted successfully', 'fizzypopups'),
+        ], 200);
+    }
+
+    public function bulkAction()
+    {
+        $bulkValue =  sanitize_text_field($_REQUEST['bulk_value']);
+        $popupIds = sanitize_text_field($_REQUEST['popup_ids']);
+        $popupIds = json_decode(wp_unslash($popupIds), true);
+        $popupIds = array_filter(array_column($popupIds, 'ID'));
+
+        if( $bulkValue === 'delete' ) {
+            foreach($popupIds as $popupId) {
+                wp_delete_post($popupId, true);
+                delete_post_meta($popupId, '_fizzy_popup_configs', true);
+                delete_post_meta($popupId, '_fizzy_popup_html', true);
+            }
+        }
+
+        wp_send_json_success([
+            'message' => __("Data ${bulkValue} successfully", 'fizzypopups')
         ], 200);
     }
 

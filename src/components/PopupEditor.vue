@@ -67,6 +67,7 @@ import ContentsPanel from '../components/editor-ui/settings/ContentsPanel';
 import LayoutPanel from '../components/editor-ui/settings/LayoutPanel';
 import DisplayPanel from '../components/editor-ui/settings/DisplayPanel';
 import Remove from '../components/editor-ui/pieces/Remove';
+import Clipboard from 'clipboard';
 
 export default {
     name:'popup-editor',
@@ -276,8 +277,21 @@ export default {
             let classPrefix = '.fizzy-popup-components-container';
             let popupCss = this.generateCSS(classPrefix);
             jQuery('#fizzy_popup_dynamic_style').html(popupCss);  
-        }
+        },
         //css generate end
+        clipboard(){
+            if( !window.clipboard ){
+                window.clipboard = new Clipboard('.copy');
+                    window.clipboard.on('success', (e) => {
+                    let message = 'Shortcode is Copied!'
+                    this.$message({
+                        showClose: true,
+                        message: message,
+                        type: 'success'
+                    });
+                });
+            }
+        }
     },
 
     mounted() {
@@ -287,6 +301,7 @@ export default {
                 this.reloadCss();
             }
         });
+        this.clipboard();
     }
 }
 </script>

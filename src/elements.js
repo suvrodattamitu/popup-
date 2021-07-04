@@ -4,9 +4,6 @@ import App from './App.vue';
 import {
   ElButton,
   ElButtonGroup,
-  ElCheckbox,
-  ElCheckboxButton,
-  ElCheckboxGroup,
   ElCol,
   ElCollapse,
   ElCollapseItem,
@@ -22,10 +19,6 @@ import {
   ElOption,
   ElOptionGroup,
   ElPagination,
-  ElPopover,
-  ElRadio,
-  ElRadioButton,
-  ElRadioGroup,
   ElRow,
   ElSelect,
   ElSlider,
@@ -34,7 +27,6 @@ import {
   ElTable,
   ElTableColumn,
   ElTabs,
-  ElTooltip,
   ElLoading,
   ElMessage
 } from 'element-plus';
@@ -42,9 +34,6 @@ import {
 const components = [
   ElButton,
   ElButtonGroup,
-  ElCheckbox,
-  ElCheckboxButton,
-  ElCheckboxGroup,
   ElCol,
   ElCollapse,
   ElCollapseItem,
@@ -60,10 +49,6 @@ const components = [
   ElOption,
   ElOptionGroup,
   ElPagination,
-  ElPopover,
-  ElRadio,
-  ElRadioButton,
-  ElRadioGroup,
   ElRow,
   ElSelect,
   ElSlider,
@@ -72,7 +57,6 @@ const components = [
   ElTable,
   ElTableColumn,
   ElTabs,
-  ElTooltip
 ]
 
 const plugins = [

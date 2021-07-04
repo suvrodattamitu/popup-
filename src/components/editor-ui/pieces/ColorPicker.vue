@@ -13,7 +13,7 @@
 <script type="text/babel">
 export default {
     props: ['modelValue'],
-
+    emits: ['update:modelValue'],
     data() {
         return {
             predefineColors: [
