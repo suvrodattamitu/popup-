@@ -1,3 +1,9 @@
+<?php 
+    if( empty($element['text']) ) {
+        return;
+    }
+?>
+
 .fizzy-popup-button-container{
     display: flex;
     justify-content: center;

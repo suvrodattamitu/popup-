@@ -1,3 +1,8 @@
+<?php
+    if( empty($element['value']) ) {
+        return;
+    }
+?>
 .<?php echo $prefix; ?> .<?php echo $element['selector']; ?> {
     text-align: center;
     color: <?php echo $element['text_color']; ?>;

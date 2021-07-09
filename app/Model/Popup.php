@@ -217,10 +217,35 @@ class Popup
                     'display_time' => 30
                 )
             ),
-
+            'shortcode_popup' => array(
+                'title' => 'Shortcode Popup',
+                'image'      => $asset_url.'/images/popups/layout-four.png',
+                'layout_type'   => 'Shortcode Popup',
+                'popup_components' => array(
+                    array(
+                        'key' => 'shortcode',
+                        'show' => 'true',
+                        'selector'  => '.fizzy-popup-shortcode1',
+                        'shortcode' => '',
+                    ),
+                ),
+                'layout' => array(
+                    'margin' => 15,
+                    'width' => 600,
+                    'corners' => 'square',
+                    'background_image_url'  => '',
+                    'background_image_overlay_color' => '',
+                    'background_color'  => '#fff',
+                    'display_close_button'  => 'true',
+                    'close_button_color' => '#000'
+                ),
+                'settings'  => array(
+                    'display_time' => 30
+                )
+            ),
             'blank_popup' => array(
                 'title' => 'Blank Popup',
-                'image'      => $asset_url.'/images/popups/layout-four.png',
+                'image'      => $asset_url.'/images/popups/layout-five.png',
                 'layout_type'   => 'Blank Popup',
                 'popup_components' => array(
                     array(

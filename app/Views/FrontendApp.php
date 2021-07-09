@@ -47,9 +47,11 @@ class FrontendApp
     public function popupHtml($popupConfigs)
     {
         $components = $popupConfigs['popup_components'];
+        
+        $shortcodeIndex = array_search('shortcode', array_column($components, 'key'));
 
         $popupHtml = '';
-        if ($popupHtml = get_post_meta($this->popupId, '_fizzy_popup_html', true)) {
+        if ($shortcodeIndex === false && $popupHtml = get_post_meta($this->popupId, '_fizzy_popup_html', true)) {
             return $popupHtml;
         }
 
@@ -99,7 +101,9 @@ class FrontendApp
         </div>
         <?php
         $popup = ob_get_clean();
-        update_post_meta($this->popupId, '_fizzy_popup_html', $popup);
+        if ($shortcodeIndex === false) {
+            update_post_meta($this->popupId, '_fizzy_popup_html', $popup);
+        }
         return $popup;
     }
 

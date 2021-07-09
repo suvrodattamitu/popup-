@@ -227,7 +227,7 @@
         },
         methods: {
             openBulkModal() {
-                if(this.multipleSelection.length) {
+                if(this.multipleSelection.length && this.bulk_value) {
                     this.showBulkModal = true;
                 }
             },
@@ -328,7 +328,6 @@
                 this.bulk_value = '';
             },
             duplicatePopup(popup){
-                
                 this.loading = true;
                 this.$adminPost({
                     route: 'duplicate_popup',

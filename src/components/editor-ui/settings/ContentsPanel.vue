@@ -66,6 +66,7 @@ import component_title from './elements/component_title';
 import component_separator from './elements/component_separator';
 import component_banner from './elements/component_banner';
 import component_html from './elements/component_html';
+import component_shortcode from './elements/component_shortcode';
 import draggable from 'vuedraggable';
 
 export default {
@@ -78,12 +79,11 @@ export default {
         component_separator,
         component_banner,
         component_html,
+        component_shortcode,
         draggable,
     },
     data() {
         return {
-            val:'',
-            value2:"true",
             activeName: 0
         }
     },

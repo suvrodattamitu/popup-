@@ -1,3 +1,9 @@
+<?php 
+    if( empty($element['image_url']) ) {
+        return;
+    }
+?>
+
 .fizzy-popup-banner-container{
     flex-basis: 0px;
     flex-grow: 1;

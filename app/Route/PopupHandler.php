@@ -202,7 +202,6 @@ class PopupHandler
 
     public function updatePopupMeta() 
     {
-
         $popupId = intval($_REQUEST['popup_id']);
         $popupMeta = $_REQUEST['popup_meta'];
 

@@ -1,6 +1,5 @@
 
 .fizzy_popup_docs_wrap{
-
     padding: 12px;
     background: white;
     text-align: center;
@@ -14,7 +13,6 @@
       }
     }
   }
-  
   .fizzy_popup_support_block {
     background: white;
     margin-top: 20px;
@@ -27,7 +25,6 @@
         margin: 0;
       }
     }
-  
     .support_block_body {
       padding: 10px 20px;
       ul.support_block_lists {
@@ -48,7 +45,6 @@
         }
       }
     }
-  
     ul.support_items {
       margin: 15px 0px;
       li {
@@ -58,5 +54,11 @@
         font-size: 14px;
       }
     }
+}
 
+.fizzy_popup_message_description {
+  padding: 12px;
+  background: white;
+  text-align: center;
+  margin: 12px;
 }

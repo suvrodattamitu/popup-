@@ -22,7 +22,7 @@
                 </div>
             </el-col>
         </el-row>
-
+        
         <el-row v-if="configs.show === 'true'">
             <el-col :span="24">
                 <div class="fizzy_popup_item">
@@ -34,7 +34,7 @@
     </div>
 </template>
 
-<script>
+<script type="text/babel">
 import ColorPicker from '../../pieces/ColorPicker.vue';
 
 export default {
