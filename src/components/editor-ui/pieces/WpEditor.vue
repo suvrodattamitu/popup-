@@ -162,16 +162,4 @@ export default {
         float: left;
     }
 }
-
-.mce-fluentcrm_editor_btn {
-    button {
-        font-size: 10px !important;
-        border: 1px solid gray;
-        margin-top: 3px;
-    }
-
-    &:hover {
-        border: 1px solid transparent !important;
-    }
-}
 </style>

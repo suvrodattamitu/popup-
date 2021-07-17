@@ -97,7 +97,6 @@ class Menu
     public function enqueueAssets()
     {
         if (isset($_GET['page']) && $_GET['page'] == 'fizzypopups') {
-
             wp_enqueue_style('fizzypopups_admin_app', FIZZYPOPUPS_URL . 'public/css/fizzypopups-admin.css', array(), FIZZYPOPUPS_VERSION);
             wp_enqueue_style('fizzypopups_app', FIZZYPOPUPS_URL . 'public/css/popup.css', array(), FIZZYPOPUPS_VERSION);
 
@@ -107,13 +106,15 @@ class Menu
 
             wp_enqueue_editor();
             wp_enqueue_media();
-
+            
             $fizzypopupsAdminVars = apply_filters('fizzypopups/admin_app_vars', array(
                 'i18n' => array(
                     'All Collections' => __('All Collections', 'fizzypopups')
                 ),
                 'assets_url' => FIZZYPOPUPS_URL . 'public',
                 'ajaxurl' => admin_url('admin-ajax.php'),
+                'fizzy_popups_admin_nonce' => wp_create_nonce('fizzy_popups_admin_nonce'),
+                'pro_activated' => defined('FIZZYPOPUP_PRO') && FIZZYPOPUP_PRO,
             ));
 
             wp_localize_script('fizzypopups_boot', 'FizzyPopupsAdmin', $fizzypopupsAdminVars);

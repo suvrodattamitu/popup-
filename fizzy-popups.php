@@ -6,7 +6,7 @@
  * Author: Light Plugins
  * Author URI: https://profiles.wordpress.org/lovelightplugins
  * License: GPLv2 or later
- * Version: 1.2.0
+ * Version: 1.3.0
  * Text Domain: fizzypopups
  */
 
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('FIZZYPOPUPS_VERSION')) {
-    define('FIZZYPOPUPS_VERSION', '1.2.0');
+    define('FIZZYPOPUPS_VERSION', '1.3.0');
     define('FIZZYPOPUPS_DB_VERSION', 217);
     define('FIZZYPOPUPS_MAIN_FILE', __FILE__);
     define('FIZZYPOPUPS_BASENAME', plugin_basename(__FILE__));

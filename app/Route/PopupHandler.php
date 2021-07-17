@@ -31,6 +31,17 @@ class PopupHandler
      **/
     public function handeEndPoint()
     {
+        $nonce = sanitize_text_field($_REQUEST['fizzy_popups_admin_nonce']);
+        if (!wp_verify_nonce($nonce, 'fizzy_popups_admin_nonce')) {
+            $errors = apply_filters('fizzypopups/nonce_error', [
+                'error' => [
+                    __('Nonce verification failed', 'fizzypopups')
+                ]
+            ]);
+
+            wp_send_json($errors['error'], 422);
+        }
+
         $route = sanitize_text_field($_REQUEST['route']);
         $routes = array(
             //popup title
@@ -241,6 +252,7 @@ class PopupHandler
                 'title'      => $item['title'],
                 'layout_type'=> $item['layout_type'],
                 'image'      => $item['image'],
+                'pro'        => $item['is_pro']
             );
         }
         wp_send_json_success([

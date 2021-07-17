@@ -4,6 +4,15 @@
     position: fixed;
     display: none;
 }
+
+.show_popup {
+    display: block;
+}
+
+.hide_popup {
+    display: none;
+}
+
 .fizzy-popup-modal{
     z-index: 999;
     left: 0;

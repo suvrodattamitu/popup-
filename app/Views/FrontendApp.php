@@ -61,7 +61,7 @@ class FrontendApp
         ?>
         <div class="nfd-container">
             <div class="nfd-row <?php echo esc_html($popupConfigs['layout_type']); ?>">
-                <div class="fizzy-popup-modal frontend-popup-modal"  id="fizzy-popup-modal-light">
+                <div class="fizzy-popup-modal frontend-popup-modal hide_popup"  id="fizzy-popup-modal-light" data-settings="<?php echo htmlspecialchars(json_encode($popupConfigs['settings']), ENT_QUOTES, 'UTF-8'); ?>">
                     <div class="fizzy-popup-modal-content fizzy-popup-content-styler">
                     <?php if($popupConfigs['layout']['display_close_button'] === 'true'): ?>
                     <div class="fizzy-popup-component-container">

@@ -1,9 +1,9 @@
-=== Fizzy Popups | Fastest Popups Builder (With Elementor Widget)===
+=== Fizzy Popups | Fastest Popups Builder (With Elementor Widget Addon)===
 Contributors: lovelightplugins
 Tags: popups, popup, notifications , dialogue, dialogues, wp popups, popup builder
 Requires at least: 3.4
 Tested up to: 5.7.2
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -13,8 +13,6 @@ Display clean, customizable, and responsive Popups To Your Wordpress Site.
 
 It is often found very difficult to set up a popup.Most of the time user can't show what they want to show in the popup.For that reason we introduce Fizzy Popups.Using it you can show what you want to show and how you want to show in the popup.
 You can customize everything!! You can Organize your popups like your dreams!! In a Sentence, You can implement your imagination to reality using Fizzy Popups.
-
-Greetings, Empower your popups with Shortcode Layout. We are Introducing Shortcode Layout to support any shortcode to popup.Make Subscriber form With any form plugin just copy and paste Shortcode to our Shortcode Layout ( show anything, it was just an example!! ). 
 
 = Why Fizzy Popups ? =
 
@@ -40,15 +38,18 @@ Yes, It is Elementor Compatible.
 2. Design : Layout One
 3. Design : Layout Two
 4. Design : Layout Three
-5. Design : Layout Four
-6. Your customized Fizzy Popups in frontend
+5. Your customized Fizzy Popups in frontend
 
 == Changelog ==
 
-= 1.5.0 (DATE: JULY 10, 2021) =
+= 1.3.0 (DATE: JULY 15, 2021) =
+
+* Added Nonce 
+* Added More Display Triggers Options
+
+= 1.2.1 (DATE: JULY 10, 2021) =
 
 * More Customized Css Load in frontend (Load css more faster)
-* Added Shortcode Layout
 * Fix Button Css Issue
 
 = 1.2.0 (DATE: JULY 04, 2021) =

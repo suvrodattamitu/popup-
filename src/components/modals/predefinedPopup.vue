@@ -10,10 +10,10 @@
             <div v-loading="fetching" class="fizzy-popup-group">
                 <div v-for="(popup, name) in predefinedTemplates" :key="name" class="fizzy-popup">
                     <div class="fizzy-popup-inner-item">
-                        <p class="fizzy-popup-header-title">{{ popup.title }}</p>
+                        <p class="fizzy-popup-header-title">{{ popup.title }} {{popup.pro ? ' (Pro)' : ''}}</p>
                         <img :src="popup.image" alt="">
                         <div class="fizzy-popup-inner-text fizzy-popup-inner-text-hoverable">
-                            <h3 class="fizzy-modal-title">{{ popup.title }}</h3>
+                            <h3 class="fizzy-modal-title">{{ popup.title }} {{popup.pro ? ' (Pro)' : ''}}</h3>
                             <div>
                                 <el-button :loading="creatingTemplate" type="primary" size="small"
                                     @click="createPopupMeta(name, popup)"
@@ -67,6 +67,14 @@
                     });
             },
             createPopupMeta(templateType, form) {
+                if(form.pro) {
+                    this.$message({
+                        showClose: true,
+                        message: 'Required Pro!!',
+                        type: 'error'
+                    });
+                    return;
+                }
                 this.creatingTemplate = true
                 this.$adminPost({
                     route: 'create_popup_meta',
@@ -103,7 +111,6 @@
 </script>
 
 <style lang="scss">
-
     .predefinedModal {
         .el-dialog__title {
             display: flex;
@@ -115,7 +122,6 @@
     .el-overlay {
         left: 160px;
     }
-
     .fizzy-popup {
         &-group {
             overflow: hidden;
@@ -124,7 +130,6 @@
                 margin-bottom: 30px;
             }
         }
-
         width: 200px;
         // height: 250px;
         border: 1px solid #ccc;
@@ -132,17 +137,14 @@
         padding: 5px;
         transition: border 0.3s;
         overflow: hidden;
-
         .fizzy-popup {
             margin-right: 10px;
         }
-
         img {
             width: 100%;
             height: auto;
             display: block;
         }
-
         &-header-title {
             text-align: center;
             margin: 0px;
@@ -152,26 +154,22 @@
             color: #fff;
             font-weight: 400;
         }
-
         &-inner-item {
             position: relative;
             overflow: hidden;
             height: inherit;
         }
-
         &:hover {
             .fizzy-popup-inner-text {
                 opacity: 1;
                 visibility: visible;
             }
         }
-
         &-inner-text {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-
             &-hoverable {
                 opacity: 0;
                 visibility: hidden;
@@ -185,7 +183,6 @@
                 padding: 10px;
                 background-color: rgba(0,0,0,0.6);
             }
-
             .fizzy-modal-title {
                 color: #fff;
                 margin: 0 0 10px;

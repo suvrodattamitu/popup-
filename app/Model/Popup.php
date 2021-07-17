@@ -20,6 +20,7 @@ class Popup
                 'title' => 'Christmas Sale',
                 'image'      => $asset_url.'/images/popups/layout-one.png',
                 'layout_type'   => 'Christmas Sale',
+                'is_pro'    => false,
                 'popup_components' => array(
                     array(
                         'key' => 'spacing',
@@ -81,14 +82,16 @@ class Popup
                     'close_button_color' => '#fff'
                 ),
                 'settings'  => array(
-                    'display_time' => 30
+                    'trigger_type'  => 'page_load',
+                    'display_time'  => 30,
+                    'html_element'  => ''
                 )
             ),
-
             'discount_offer' => array(
                 'title' => 'Discount Offer',
                 'image'      => $asset_url.'/images/popups/layout-two.png',
                 'layout_type'   => 'Discount Offer',
+                'is_pro'    => false,
                 'popup_components' => array(
                     array(
                         'key' => 'title',
@@ -151,14 +154,16 @@ class Popup
                     'close_button_color' => '#000'
                 ),
                 'settings'  => array(
-                    'display_time' => 30
+                    'trigger_type'  => 'page_load',
+                    'display_time'  => 30,
+                    'html_element'  => ''
                 )
             ),
-
             'special_offer' => array(
                 'title' => 'Special Offer',
                 'image'      => $asset_url.'/images/popups/layout-three.png',
                 'layout_type'   => 'Special Offer',
+                'is_pro'    => false,
                 'popup_components' => array(
                     array(
                         'key' => 'image',
@@ -214,13 +219,16 @@ class Popup
                     'close_button_color' => '#000'
                 ),
                 'settings'  => array(
-                    'display_time' => 30
+                    'trigger_type'  => 'page_load',
+                    'display_time'  => 30,
+                    'html_element'  => ''
                 )
             ),
             'shortcode_popup' => array(
                 'title' => 'Shortcode Popup',
                 'image'      => $asset_url.'/images/popups/layout-four.png',
                 'layout_type'   => 'Shortcode Popup',
+                'is_pro'    => true,
                 'popup_components' => array(
                     array(
                         'key' => 'shortcode',
@@ -240,13 +248,16 @@ class Popup
                     'close_button_color' => '#000'
                 ),
                 'settings'  => array(
-                    'display_time' => 30
+                    'trigger_type'  => 'page_load',
+                    'display_time'  => 30,
+                    'html_element'  => ''
                 )
             ),
             'blank_popup' => array(
                 'title' => 'Blank Popup',
                 'image'      => $asset_url.'/images/popups/layout-five.png',
                 'layout_type'   => 'Blank Popup',
+                'is_pro'    => false,
                 'popup_components' => array(
                     array(
                         'key' => 'html',
@@ -302,7 +313,9 @@ class Popup
                     'close_button_color' => '#000'
                 ),
                 'settings'  => array(
-                    'display_time' => 30
+                    'trigger_type'  => 'page_load',
+                    'display_time'  => 30,
+                    'html_element'  => ''
                 )
             )
         );

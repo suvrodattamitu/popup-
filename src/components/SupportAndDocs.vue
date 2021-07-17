@@ -27,7 +27,7 @@
             <el-col>
                 <div class="fizzy_popup_message_description">
                     <h3>What next ?</h3>
-                    <h4>We are new here(New born baby).We are continuously Improving our plugin.Please, Stay connected with us.Promise we will surprise you with amazing features.</h4>
+                    <h4>We are continuously Improving our plugin.Please, Stay connected with us.Promise we will surprise you with amazing features.</h4>
                 </div>
             </el-col>
         </el-row>
